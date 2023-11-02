@@ -1,0 +1,154 @@
+body
+{
+    padding-top: 1px; 
+    background-color: rgba(32, 33, 36, 1);
+}
+
+.login-headline
+{
+    display: flex;
+    width: fit-content;
+
+    h1
+    {
+        margin-top: 16px;
+        font-size: 32px; 
+        margin-bottom: 32px;
+        margin-left: 32px; 
+        color: rgb(63, 81, 181);
+        text-shadow: rgb(63, 81, 181) 1px -2px; 
+        cursor: default;
+    }
+
+    img
+    {
+        height: 50px;
+        margin-right: 20px; 
+    } 
+}
+
+.login-form-split
+{
+    margin-left: 0;
+    margin-right: 40px;
+    margin-bottom: 32px;
+
+    hr 
+    {
+        margin-left: 0px;
+        width: 100%; 
+    }
+}
+
+.login-form
+{
+    margin: auto;
+    width: 50%;
+    margin-top: 150px; 
+    padding-left: 40px;
+    padding-top: 32px;
+    padding-bottom: 8px; 
+    border-radius: 8px;
+    background-color: whitesmoke; 
+    display: grid;
+    width:fit-content;
+
+    .login-form-information
+    {
+        
+        h2
+        {
+            margin-left: 150px;
+            margin-bottom: 45px;         
+            color: rgba(63, 81, 181, 0.9); 
+            cursor: default;
+        }
+    }
+
+    .login-form-user-input
+    {
+        display: grid;
+        width:fit-content;
+    }
+
+    .login-form-user-field
+    {
+        width: 400px;
+    }
+
+    .login-form-forgot-password
+    {
+        margin-left: 298px;
+        font-size: small;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgba(63, 81, 181, 0.75);
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+
+    .login-form-button-area
+    {
+        display: flex;
+        margin-top: 64px;
+        width: fit-content;
+
+        .login-form-button-login
+        {
+            width: 400px;
+            margin-right: 40px;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .login-form-hint-area
+    {
+        width: fit-content;
+        margin-top: 25px;
+        margin-left: 64px;
+
+        .login-form-hint
+        {
+            font-size: small;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .login-form-hyperlink
+        {
+            text-decoration: none;
+            font-weight: bold; 
+            color: rgb(63, 81, 181); 
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .login-language-selection
+    {
+        margin-left: 295px; 
+        margin-top: 16px;
+
+        button 
+        {
+            color: rgba(0, 0, 0, 0.6);   
+            font-size: small;  
+        }
+
+        img 
+        {
+            margin-right: 4px;
+            height: 20px;
+            vertical-align: middle;
+        }
+    }
+}
