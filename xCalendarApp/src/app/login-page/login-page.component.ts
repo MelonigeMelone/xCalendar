@@ -4,7 +4,7 @@ import { NgIf } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -19,4 +19,11 @@ export class LoginPageComponent
 {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   hide = true; 
+
+  language: string = 'english'; 
+
+  setLanguage(clckedButtonId:string)
+  {
+    this.language = clckedButtonId;
+  }
 }
