@@ -1,7 +1,11 @@
 body
 {
-    padding-top: 1px; 
-    background-color: rgba(32, 33, 36, 1);
+    padding-top: 1px;
+    background-image: url("../../assets/img/login-background.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .login-headline
@@ -9,29 +13,18 @@ body
     display: flex;
     width: fit-content;
 
-    h1
-    {
-        margin-top: 16px;
-        font-size: 32px; 
-        margin-bottom: 32px;
-        margin-left: 32px; 
-        color: rgb(63, 81, 181);
-        text-shadow: rgb(63, 81, 181) 1px -2px; 
-        cursor: default;
-    }
-
     img
     {
-        height: 50px;
-        margin-right: 20px; 
+        height: 5.5vh;
+        margin-left: 2vw;
     } 
 }
 
 .login-form-split
 {
     margin-left: 0;
-    margin-right: 40px;
-    margin-bottom: 32px;
+    margin-right: 2vw;
+    margin-bottom: 4vh;
 
     hr 
     {
@@ -44,22 +37,21 @@ body
 {
     margin: auto;
     width: 50%;
-    margin-top: 150px; 
-    padding-left: 40px;
-    padding-top: 32px;
-    padding-bottom: 8px; 
+    margin-top: 16vh; 
+    padding-left: 2vw;
+    padding-top: 4vh;
+    padding-bottom: 1vh; 
     border-radius: 8px;
     background-color: whitesmoke; 
     display: grid;
     width:fit-content;
 
     .login-form-information
-    {
-        
+    {   
         h2
         {
-            margin-left: 150px;
-            margin-bottom: 45px;         
+            margin-left: 8vw;
+            margin-bottom: 4vh;         
             color: rgba(63, 81, 181, 0.9); 
             cursor: default;
         }
@@ -73,12 +65,12 @@ body
 
     .login-form-user-field
     {
-        width: 400px;
+        width: 21vw;
     }
 
     .login-form-forgot-password
     {
-        margin-left: 298px;
+        margin-left: 15.5vw;
         font-size: small;
         font-weight: bold;
         text-decoration: none;
@@ -93,13 +85,13 @@ body
     .login-form-button-area
     {
         display: flex;
-        margin-top: 64px;
+        margin-top: 6vh;
         width: fit-content;
 
         .login-form-button-login
         {
-            width: 400px;
-            margin-right: 40px;
+            width: 21vw;
+            margin-right: 2vw;
 
             &:hover
             {
@@ -111,8 +103,8 @@ body
     .login-form-hint-area
     {
         width: fit-content;
-        margin-top: 25px;
-        margin-left: 64px;
+        margin-top: 2.5vh;
+        margin-left: 3.25vw;
 
         .login-form-hint
         {
@@ -135,8 +127,8 @@ body
 
     .login-language-selection
     {
-        margin-left: 295px; 
-        margin-top: 16px;
+        margin-left: 15.5vw; 
+        margin-top: 1.5vh;
 
         button 
         {
@@ -146,8 +138,8 @@ body
 
         img 
         {
-            margin-right: 4px;
-            height: 20px;
+            margin-right: 0.25vw;
+            height: 2vh;
             vertical-align: middle;
         }
     }
