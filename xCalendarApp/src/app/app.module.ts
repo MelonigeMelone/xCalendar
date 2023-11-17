@@ -12,10 +12,14 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { LoginPageComponent } from './login-page/login-page.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CountriesComponent } from './countries/countries.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        CountriesComponent,
         
     ],
     providers: [],
@@ -29,7 +33,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
         MatButtonModule,
         MatCheckboxModule,
         MatMenuModule,
-        LoginPageComponent
+        LoginPageComponent,
+        GraphQLModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }
