@@ -10,14 +10,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss'],
+  selector: 'app-register-page',
   standalone: true,
+  templateUrl: './register-page.component.html',
+  styleUrls: ['./register-page.component.scss'],
   imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, NgIf, MatIconModule, MatButtonModule, MatCheckboxModule, MatMenuModule, RouterModule], 
 })
-export class LoginPageComponent  
-{
+export class RegisterPageComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  usernameFormControl = new FormControl('', [Validators.required]);  
   hide = true; 
 }

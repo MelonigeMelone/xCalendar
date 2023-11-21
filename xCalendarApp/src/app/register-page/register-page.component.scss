@@ -8,7 +8,7 @@ body
     background-size: cover;
 }
 
-.login-headline
+.register-headline
 {
     display: flex;
     width: fit-content;
@@ -20,7 +20,7 @@ body
     } 
 }
 
-.login-form-split
+.register-form-split
 {
     margin-left: 0;
     margin-right: 2vw;
@@ -33,11 +33,11 @@ body
     }
 }
 
-.login-form
+.register-form
 {
     margin: auto;
     width: 50%;
-    margin-top: 16vh; 
+    margin-top: 8vh; 
     padding-left: 2vw;
     padding-top: 4vh;
     padding-bottom: 1vh; 
@@ -46,49 +46,36 @@ body
     display: grid;
     width:fit-content;
 
-    .login-form-information
+    .register-form-information
     {   
         h2
         {
-            margin-left: 8vw;
+            margin-left: 7.5vw;
             margin-bottom: 4vh;         
             color: rgba(63, 81, 181, 0.9); 
             cursor: default;
         }
     }
 
-    .login-form-user-input
+    .register-form-user-input
     {
         display: grid;
         width:fit-content;
-    }
 
-    .login-form-user-field
-    {
-        width: 21vw;
-    }
-
-    .login-form-forgot-password
-    {
-        margin-left: 15.5vw;
-        font-size: small;
-        font-weight: bold;
-        text-decoration: none;
-        color: rgba(63, 81, 181, 0.75);
-
-        &:hover
+        mat-form-field
         {
-            text-decoration: underline;
+            width: 21vw;
+            margin-bottom: 1.5vh;
         }
     }
 
-    .login-form-button-area
+    .register-form-button-area
     {
         display: flex;
         margin-top: 6vh;
         width: fit-content;
 
-        .login-form-button-login
+        .register-form-button-register
         {
             width: 21vw;
             margin-right: 2vw;
@@ -100,19 +87,19 @@ body
         }
     }
 
-    .login-form-hint-area
+    .register-form-hint-area
     {
         width: fit-content;
         margin-top: 2.5vh;
-        margin-left: 3.25vw;
+        margin-left: 3.5vw;
 
-        .login-form-hint
+        .register-form-hint
         {
             font-size: small;
             color: rgba(0, 0, 0, 0.7);
         }
 
-        .login-form-hyperlink
+        .register-form-hyperlink
         {
             text-decoration: none;
             font-weight: bold; 
