@@ -7,6 +7,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+<<<<<<< Updated upstream
+=======
+import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-login-page',
@@ -15,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
   standalone: true,
   imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, NgIf, MatIconModule, MatButtonModule, MatCheckboxModule, MatMenuModule], 
 })
+<<<<<<< Updated upstream
 export class LoginPageComponent 
 {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -25,5 +30,26 @@ export class LoginPageComponent
   setLanguage(clckedButtonId:string)
   {
     this.language = clckedButtonId;
+=======
+
+export class LoginPageComponent  
+{
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  hide = true;
+  
+  constructor (private router: Router)
+  {
+  }
+
+  loginClicked(userMailAddress: string, userPassword: string)
+  {
+    if(userMailAddress && userPassword)
+    {
+      if (!this.emailFormControl.errors)
+      {
+        this.router.navigate(['/home', userMailAddress, userPassword]); 
+      }
+    } 
+>>>>>>> Stashed changes
   }
 }

@@ -12,8 +12,13 @@
 
         <div class="login-form-user-input"> 
             <mat-form-field appearance="outline" class="login-form-user-field">
+<<<<<<< Updated upstream
                 <mat-label>Email address</mat-label>
                 <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. name@example.com">
+=======
+                <mat-label lang="en">Email address</mat-label> 
+                <input #userMailAddress type="email" matInput [formControl]="emailFormControl" placeholder="Ex. name@example.com" lang="en">
+>>>>>>> Stashed changes
 
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
                 <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
@@ -22,8 +27,13 @@
             <a href="placeholder" class="login-form-forgot-password" tabindex="-1">Forgot password</a> 
 
             <mat-form-field appearance="outline" class="login-form-user-field">
+<<<<<<< Updated upstream
                 <mat-label>Password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'">
+=======
+                <mat-label lang="en">Password</mat-label>
+                <input #userPassword matInput [type]="hide ? 'password' : 'text'" >
+>>>>>>> Stashed changes
 
                 <button tabindex="-1" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
@@ -31,6 +41,7 @@
         </div>
 
         <div class="login-form-button-area">
+<<<<<<< Updated upstream
             <button mat-raised-button class="login-form-button-login" color="primary">Log in</button>
         </div>
 
@@ -46,5 +57,13 @@
                 <button mat-menu-item (click)="setLanguage('german')">Deutsch</button> 
             </mat-menu>
         </div>
+=======
+            <button mat-raised-button class="login-form-button-login" color="primary" lang="en" (click)="loginClicked(userMailAddress.value, userPassword.value)">Log in</button>      
+        </div>
+
+        <div class="login-form-hint-area">
+            <p class="login-form-hint" lang="en">Don't have a xCalendar account? <a routerLink="register" class="login-form-hyperlink" tabindex="-1" lang="en">Register now</a></p>  
+        </div>  
+>>>>>>> Stashed changes
     </div>  
-</body>
+</body> 

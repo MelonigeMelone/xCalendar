@@ -12,6 +12,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { LoginPageComponent } from './login-page/login-page.component';
+<<<<<<< Updated upstream
+=======
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+>>>>>>> Stashed changes
 
 @NgModule({
     declarations: [
@@ -29,7 +35,13 @@ import { LoginPageComponent } from './login-page/login-page.component';
         MatButtonModule,
         MatCheckboxModule,
         MatMenuModule,
+<<<<<<< Updated upstream
         LoginPageComponent
+=======
+        LoginPageComponent,
+        RegisterPageComponent,
+        LandingPageComponent
+>>>>>>> Stashed changes
     ]
 })
 export class AppModule { }
