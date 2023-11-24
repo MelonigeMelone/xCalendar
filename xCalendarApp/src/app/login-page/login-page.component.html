@@ -3,16 +3,17 @@
         <div class="login-headline-image-container">
             <img src="assets/img/xcalendar-logo.png">
         </div>
+
         <div class="login-form-separator">
             <hr>
         </div>
+
         <div class="login-form-headline">
             <h2>User log in</h2> 
         </div>
 
-        <div class="login-form-user-input-textfied-container"> 
-
-            <mat-form-field appearance="outline" class="login-form-mail-address-field">
+        <div class="login-form-user-input-textfield-container"> 
+            <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-mail-address-field">
                 <mat-label>Email address</mat-label>
                 <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. name@example.com">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
@@ -21,7 +22,7 @@
     
             <a href="placeholder" class="login-form-forgot-password-link" tabindex="-1">Forgot password</a> 
 
-            <mat-form-field appearance="outline" class="login-form-password-field">
+            <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-password-field"> 
                 <mat-label>Password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'">
                 <button tabindex="-1" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -34,7 +35,7 @@
         </div>
 
         <div class="login-form-register-hint-container">
-            <p class="login-form-register-hint">Don't have a xCalendar account? <a href="placeholder" tabindex="-1" class="login-form-hyperlink">Register now</a></p> 
+            <p class="login-form-register-hint">Don't have a xCalendar account? <a routerLink="/registration" tabindex="-1">Register now</a></p> 
         </div>
     </div>  
 </body>
