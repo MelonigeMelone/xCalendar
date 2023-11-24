@@ -1,50 +1,40 @@
 <body>
     <div class="login-form"> 
-        <div class="login-headline">
+        <div class="login-headline-image-container">
             <img src="assets/img/xcalendar-logo.png">
         </div>
-        <div class="login-form-split">
+        <div class="login-form-separator">
             <hr>
         </div>
-        <div class="login-form-information">
-            <h2 *ngIf="language  == 'english'">User log in</h2> 
+        <div class="login-form-headline">
+            <h2>User log in</h2> 
         </div>
 
-        <div class="login-form-user-input"> 
-            <mat-form-field appearance="outline" class="login-form-user-field">
+        <div class="login-form-user-input-textfied-container"> 
+
+            <mat-form-field appearance="outline" class="login-form-mail-address-field">
                 <mat-label>Email address</mat-label>
                 <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. name@example.com">
-
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
                 <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
             </mat-form-field>
     
-            <a href="placeholder" class="login-form-forgot-password" tabindex="-1">Forgot password</a> 
+            <a href="placeholder" class="login-form-forgot-password-link" tabindex="-1">Forgot password</a> 
 
-            <mat-form-field appearance="outline" class="login-form-user-field">
+            <mat-form-field appearance="outline" class="login-form-password-field">
                 <mat-label>Password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'">
-
                 <button tabindex="-1" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
             </mat-form-field>
         </div>
 
-        <div class="login-form-button-area">
-            <button mat-raised-button class="login-form-button-login" color="primary">Log in</button>
+        <div class="login-form-login-button-container">
+            <button mat-raised-button class="login-form-login-button" color="primary">Log in</button>
         </div>
 
-        <div class="login-form-hint-area">
-            <p class="login-form-hint">Don't have a xCalendar account? <a href="placeholder" class="login-form-hyperlink" tabindex="-1">Register now</a></p> 
-        </div>
-
-        <div class="login-language-selection">
-            
-            <button mat-button [matMenuTriggerFor]="beforeMenu" tabindex="-1"><img src="assets/img/language-icon.png">Language</button>
-            <mat-menu #beforeMenu="matMenu" xPosition="before">
-                <button mat-menu-item (click)="setLanguage('english')">English</button>
-                <button mat-menu-item (click)="setLanguage('german')">Deutsch</button> 
-            </mat-menu>
+        <div class="login-form-register-hint-container">
+            <p class="login-form-register-hint">Don't have a xCalendar account? <a href="placeholder" tabindex="-1" class="login-form-hyperlink">Register now</a></p> 
         </div>
     </div>  
 </body>
