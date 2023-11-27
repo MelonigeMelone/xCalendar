@@ -8,11 +8,11 @@ body
     overflow: hidden;
 }
 
-.login-form
+.register-form
 {
     margin: auto;
     width: 50%;
-    margin-top: 16vh; 
+    margin-top: 8vh; 
     padding-left: 2vw;
     padding-top: 4vh;
     padding-bottom: 1vh; 
@@ -22,7 +22,7 @@ body
     width:fit-content;
 }
 
-.login-headline-image-container
+.register-headline-image-container
 {
     display: flex;
     width: fit-content;
@@ -34,7 +34,7 @@ body
     } 
 }
 
-.login-form-separator
+.register-form-separator
 {
     margin-left: 0;
     margin-right: 2vw;
@@ -46,38 +46,34 @@ body
         width: 100%; 
     }
 }
- 
+
 h2
 {
-    margin-left: 8vw;
+    margin-left: 7.5vw;
     margin-bottom: 4vh;         
     color: rgb(63, 81, 181); 
     cursor: default;
 }
 
-.login-form-user-input-textfield-container
+.register-form-user-input-textfield-container
 {
     display: grid;
     width:fit-content;
 
-    .login-form-user-field
+    .register-form-user-field
     {
         width: 21vw;
-    } 
-
-    .login-form-forgot-password-link
-    {
-        margin-left: 15.5vw;
+        margin-bottom: 1.5vh;
     }
 }
 
-.login-form-login-button-container
+.register-form-register-button-container
 {
     display: flex;
     margin-top: 6vh;
     width: fit-content;
 
-    button
+    button 
     {
         width: 21vw;
         margin-right: 2vw;
@@ -89,16 +85,16 @@ h2
     }
 }
 
-.login-form-register-hint-container
+.register-form-login-hint-container
 {
     width: fit-content;
     margin-top: 2.5vh;
-    margin-left: 3.25vw;
+    margin-left: 3.5vw;
 
-    p
+    p 
     {
         font-size: small;
-        color: rgba(0, 0, 0, 0.75);
+        color: rgba(0, 0, 0, 0.75); 
         cursor: default;
     }
 }
@@ -114,4 +110,4 @@ a
     {
         text-decoration: underline;
     }
-} 
+}
