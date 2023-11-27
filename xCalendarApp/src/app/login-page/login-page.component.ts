@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -22,4 +22,19 @@ export class LoginPageComponent
 {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   hide = true; 
+
+  constructor (private router: Router)
+  {
+  }
+
+  logInWith(userMailAddress: string, userPassword: string)
+  {
+    if(userMailAddress && userPassword)
+    {
+      if(!this.emailFormControl.errors)
+      {
+        this.router.navigate(['/home', userMailAddress, userPassword]);
+      }
+    }
+  }
 }
