@@ -19,11 +19,4 @@ export class LoginPageComponent
 {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   hide = true; 
-
-  language: string = 'english'; 
-
-  setLanguage(clckedButtonId:string)
-  {
-    this.language = clckedButtonId;
-  }
 }

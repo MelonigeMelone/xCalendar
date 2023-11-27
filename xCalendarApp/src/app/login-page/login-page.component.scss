@@ -1,36 +1,11 @@
 body
 {
-    padding-top: 1px;
     background-image: url("../../assets/img/login-background.png");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.login-headline
-{
-    display: flex;
-    width: fit-content;
-
-    img
-    {
-        height: 5.5vh;
-        margin-left: 2vw;
-    } 
-}
-
-.login-form-split
-{
-    margin-left: 0;
-    margin-right: 2vw;
-    margin-bottom: 4vh;
-
-    hr 
-    {
-        margin-left: 0px;
-        width: 100%; 
-    }
+    overflow: hidden;
 }
 
 .login-form
@@ -45,102 +20,98 @@ body
     background-color: whitesmoke; 
     display: grid;
     width:fit-content;
+}
 
-    .login-form-information
-    {   
-        h2
-        {
-            margin-left: 8vw;
-            margin-bottom: 4vh;         
-            color: rgba(63, 81, 181, 0.9); 
-            cursor: default;
-        }
-    }
+.login-headline-image-container
+{
+    display: flex;
+    width: fit-content;
 
-    .login-form-user-input
+    img
     {
-        display: grid;
-        width:fit-content;
-    }
+        height: 5.5vh;
+        margin-left: 2vw;
+    } 
+}
 
-    .login-form-user-field
+.login-form-separator
+{
+    margin-left: 0;
+    margin-right: 2vw;
+    margin-bottom: 4vh;
+
+    hr 
+    {
+        margin-left: 0px;
+        width: 100%; 
+    }
+}
+ 
+h2
+{
+    margin-left: 8vw;
+    margin-bottom: 4vh;         
+    color: rgb(63, 81, 181); 
+    cursor: default;
+}
+
+.login-form-user-input-textfield-container
+{
+    display: grid;
+    width:fit-content;
+
+    input
     {
         width: 21vw;
-    }
+    } 
 
-    .login-form-forgot-password
+    .login-form-forgot-password-link
     {
         margin-left: 15.5vw;
-        font-size: small;
-        font-weight: bold;
-        text-decoration: none;
-        color: rgba(63, 81, 181, 0.75);
+    }
+}
+
+.login-form-login-button-container
+{
+    display: flex;
+    margin-top: 6vh;
+    width: fit-content;
+
+    button
+    {
+        width: 21vw;
+        margin-right: 2vw;
 
         &:hover
         {
             text-decoration: underline;
         }
     }
+}
 
-    .login-form-button-area
+.login-form-register-hint-container
+{
+    width: fit-content;
+    margin-top: 2.5vh;
+    margin-left: 3.25vw;
+
+    p
     {
-        display: flex;
-        margin-top: 6vh;
-        width: fit-content;
-
-        .login-form-button-login
-        {
-            width: 21vw;
-            margin-right: 2vw;
-
-            &:hover
-            {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .login-form-hint-area
-    {
-        width: fit-content;
-        margin-top: 2.5vh;
-        margin-left: 3.25vw;
-
-        .login-form-hint
-        {
-            font-size: small;
-            color: rgba(0, 0, 0, 0.7);
-        }
-
-        .login-form-hyperlink
-        {
-            text-decoration: none;
-            font-weight: bold; 
-            color: rgb(63, 81, 181); 
-
-            &:hover
-            {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .login-language-selection
-    {
-        margin-left: 15.5vw; 
-        margin-top: 1.5vh;
-
-        button 
-        {
-            color: rgba(0, 0, 0, 0.6);   
-            font-size: small;  
-        }
-
-        img 
-        {
-            margin-right: 0.25vw;
-            height: 2vh;
-            vertical-align: middle;
-        }
+        font-size: small;
+        color: rgba(0, 0, 0, 0.75);
+        cursor: default;
     }
 }
+
+a 
+{
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(63, 81, 181);
+            
+    &:hover
+    {
+        text-decoration: underline;
+    }
+} 
