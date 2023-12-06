@@ -1,14 +1,16 @@
 body
 {
-    margin-top: 16svh;
-    margin-left: 32svw; 
-    border: 1px solid black;
-    width: fit-content;
-    height: fit-content;
-    padding-left: 2svw;
-    padding-right: 2svw;
-    padding-top: 2svh;
-    padding-bottom: 2svh;
-    text-align: center; 
-    overflow: hidden;
+    display: flex;
+
+    .sidenav-container
+    {
+        width: 4%;
+    }
+    .content 
+    {
+        margin-top: 15%;
+        margin-left: 27%;
+        border: 1px solid black;
+        height: fit-content;
+    }
 }
