@@ -18,10 +18,12 @@ export class LandingPageComponent
   route: ActivatedRoute = inject(ActivatedRoute); 
   userMailAddress = "null";
   userPassword = "null";
+  date = "null";
 
   constructor()
   {
     this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
     this.userPassword = String(this.route.snapshot.params['userPassword']); 
+    this.date = new Date().toLocaleDateString();
   }
 }
