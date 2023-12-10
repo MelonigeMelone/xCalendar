@@ -5,11 +5,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../header/header.component';
 import { SidenavComponent } from '../sidenav/sidenav.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, HeaderComponent, SidenavComponent],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, HeaderComponent, SidenavComponent, FooterComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'], 
 })
