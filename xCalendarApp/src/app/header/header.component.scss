@@ -10,15 +10,16 @@ header
         color: transparent;
         background-color: transparent;
         border: none;
-        padding: 0px;
-        width: 13%;
+        width: 18em;
         cursor: pointer;
         position: absolute;
         left: 0;
+        margin-left: 1em;
 
         &:hover
         {
-            width: 13.5%;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .xcalendar-logo
@@ -34,24 +35,30 @@ header
         position: absolute;
         right: 0;
         top: 0;
-        margin-right: 1%;
-        margin-top: 0.25%;
+        height: fit-content;
+        margin-right: 0.75em;
+        margin-top: 0.5em;
+        height: 2.35em;
+        padding-left: 0.15em;
+        padding-right: 0.15em;
+
+        &:hover
+        {
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     
         .user-profile-picture
         {
             width: auto;
             display: inline-block;
             vertical-align: middle;
+            height: fit-content;
 
             img 
             {
-                width: 88%;
-
-                &:hover
-                {
-                    border-radius: 30px;
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
+                height: 2.3em;
+                margin-right: 0.25em;
             }
         }
         
@@ -64,12 +71,7 @@ header
             {
                 color: white;
                 font-weight: lighter;
-
-                &:hover
-                {
-                    border-radius: 5px;
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
+                font-size: medium;
             }
         }
     }

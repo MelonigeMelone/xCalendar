@@ -24,8 +24,14 @@ export class HeaderComponent
     this.userPassword = String(this.route.snapshot.params['userPassword']); 
   }
 
-  onClick()
+  onClickHome()
   {
     this.router.navigate(['/home', this.userMailAddress, this.userPassword]);
   }
+
+  onClickProfile()
+  {
+    this.router.navigate(['/profile', this.userMailAddress, this.userPassword]); 
+  }
+
 }
