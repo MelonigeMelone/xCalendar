@@ -1,6 +1,6 @@
 body
 {
-    background-image: url("../../assets/img/login-background.png");
+    background-image: url("../../assets/img/color-fade-bg.png");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body
     padding-top: 4vh;
     padding-bottom: 1vh; 
     border-radius: 8px;
-    background-color: whitesmoke; 
+    background-color: rgba(255, 255, 255, 0.9);
     display: grid;
     width:fit-content;
 }
@@ -44,6 +44,8 @@ body
     {
         margin-left: 0px;
         width: 100%; 
+        color: black;
+        background-color: black;
     }
 }
  
@@ -81,6 +83,7 @@ h2
     {
         width: 21vw;
         margin-right: 2vw;
+        background-image: linear-gradient(to right, rgba(169, 33, 98, 1), rgba(0, 144, 162, 1)); 
 
         &:hover
         {

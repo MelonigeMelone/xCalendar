@@ -17,6 +17,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CountriesComponent } from './countries/countries.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
