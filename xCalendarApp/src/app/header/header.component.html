@@ -7,7 +7,7 @@
                 <img src="assets/img/profile-pic.png"> 
               </div>
               <div class="username">
-                <h3>{{ userMailAddress }}</h3>
+                <h3 *ngFor="let user of users$ |async" >{{ user.username }}</h3>
               </div>
             </a>
         </mat-toolbar>        
