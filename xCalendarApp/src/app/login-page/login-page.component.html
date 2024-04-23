@@ -24,14 +24,14 @@
 
             <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-password-field"> 
                 <mat-label>Password</mat-label>
-                <input #userPassword matInput [type]="hide ? 'password' : 'text'">
+                <input #userPassword (keydown.enter)="onLogInWith(userMailAddress.value, userPassword.value)" matInput [type]="hide ? 'password' : 'text'">
                 <button tabindex="-1" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
             </mat-form-field>
         </div>
 
-        <div class="login-form-login-button-container">
-            <button mat-raised-button class="login-form-login-button" color="primary" (click)="logInWith(userMailAddress.value, userPassword.value)">Log in</button>
+        <div class="login-form-login-button-container"> 
+            <button mat-raised-button type="submit" class="login-form-login-button" color="primary" (click)="onLogInWith(userMailAddress.value, userPassword.value)">Log in</button>
         </div>
 
         <div class="login-form-register-hint-container">

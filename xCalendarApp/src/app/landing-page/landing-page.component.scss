@@ -1,14 +1,115 @@
 body
 {
-    margin-top: 16svh;
-    margin-left: 32svw; 
-    border: 1px solid black;
-    width: fit-content;
-    height: fit-content;
-    padding-left: 2svw;
-    padding-right: 2svw;
-    padding-top: 2svh;
-    padding-bottom: 2svh;
-    text-align: center; 
-    overflow: hidden;
+    background-color: rgb(52, 61, 63); 
+
+    .content-container
+    {
+        height: 92%;
+        padding: 1em 4em;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr 0.75fr;
+        background-image: url("../../assets/img/item-background.png");
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: left;
+        row-gap: 1%;
+        column-gap: 1%;
+        grid-template-areas: 
+        "eins eins zwei"
+        "drei vier fünf"
+        "sechs sieben sieben";     
+    }
+
+    .item
+    {
+        border-radius: 8px;
+        text-align: center;
+        color: whitesmoke;
+        background-color: rgba(255, 255, 255, 0.1);
+
+
+        &:hover
+        {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 1em 1em;
+            
+            h3 
+            {
+                font-weight: bold; 
+                color: black;
+            }
+        }
+    }
+
+     #item-1
+    {
+        margin: 3em 1em 1em 3em;
+        grid-area: eins;
+
+        &:hover
+        {
+            margin: 2em 0em 0em 2em;        
+        }
+    }
+    #item-2
+    {
+        margin: 3em 3em 1em 0em;
+        grid-area: zwei;
+
+        &:hover
+        {
+            margin: 2em 2em 0em -1em;        
+        }
+    }
+    #item-3
+    {
+        margin: 1em 1em 0em 3em;
+        grid-area: drei;
+
+        &:hover
+        {
+            margin: 0em 0em -1em 2em;        
+        }
+    }
+    #item-4
+    {
+        margin: 1em 0em 0em 0em;
+        grid-area: vier;
+
+        &:hover
+        {
+            margin: 0em -1em -1em -1em;        
+        }
+    }
+    #item-5
+    {
+        margin: 1em 3em 0em 1.5em;
+        grid-area: fünf;
+
+        &:hover
+        {
+            margin: 0em 2em -1em 0.5em;        
+        }
+    }
+    #item-6
+    {
+        margin: 2em 0em 2em 3em;
+        grid-area: sechs;
+
+        &:hover
+        {
+            margin: 1em -1em 1em 2em;        
+        }
+    }
+    #item-7
+    {
+        margin: 2em 3em 2em 3em;
+        grid-area: sieben;
+
+        &:hover
+        {
+            margin: 1em 2em 1em 2em;        
+        }
+    }
 }

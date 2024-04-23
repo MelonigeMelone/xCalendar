@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; 
 import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
@@ -20,14 +20,14 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class LoginPageComponent 
 {
+  constructor (private router: Router)
+  { 
+  }
+
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   hide = true; 
 
-  constructor (private router: Router)
-  {
-  }
-
-  logInWith(userMailAddress: string, userPassword: string)
+  onLogInWith(userMailAddress: string, userPassword: string)
   {
     if(userMailAddress && userPassword)
     {

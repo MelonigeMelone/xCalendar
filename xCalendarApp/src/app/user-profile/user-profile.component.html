@@ -1,0 +1,27 @@
+<header>
+    <app-header></app-header>
+</header>
+<body>
+    <div class="user-profile-container">
+        <div class="form-backgound-img"></div>
+        <div class="profile-picture">
+            <img src="../../assets/img/profile-pic-modern.png"> 
+        </div>
+        <div class="username-container">
+            <h2>Your Name</h2>
+            <p><img src="../../assets/img/mail-icon.png">{{ userMailAddress }}</p>
+        </div>
+    </div>
+    <div class="profile-form-separator"></div>
+    <div class="user-profile-container">
+        <div class="user-information-container">
+            <p><b>Corresponding password:</b> {{ userPassword }}</p>
+            <p><b>Bithday:</b> dd.mm.yyyy</p>
+            <p><b>Organization:</b> SeeCas AG an GmbH</p>
+            <p>...</p>
+        </div>
+    </div>
+</body>
+<footer>
+    <app-footer></app-footer>
+</footer>
