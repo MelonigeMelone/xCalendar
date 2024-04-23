@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
-import { FooterComponent } from '../footer/footer.component';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Router, RouterModule} from '@angular/router';
+import {FooterComponent} from '../footer/footer.component';
 
 @Component({
   selector: 'app-welcome-page',
@@ -12,7 +12,6 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class WelcomePageComponent {
 
-  constructor (private router : Router)
-  {
+  constructor(private router: Router) {
   }
 }

@@ -1,3 +1,3 @@
 export interface Continent {
-    name : string
-  }
+  name: string
+}
