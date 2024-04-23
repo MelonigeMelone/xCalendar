@@ -1,41 +1,49 @@
 <body>
-    <div class="login-form"> 
-        <div class="login-headline-image-container">
-            <img src="assets/img/xcalendar-logo.png">
-        </div>
+<div class="login-form">
+  <div class="login-headline-image-container">
+    <img src="assets/img/xcalendar-logo.png" alt="">
+  </div>
 
-        <div class="login-form-separator">
-            <hr>
-        </div>
+  <div class="login-form-separator">
+    <hr>
+  </div>
 
-        <div class="login-form-headline">
-            <h2>User log in</h2> 
-        </div>
+  <div class="login-form-headline">
+    <h2>User log in</h2>
+  </div>
 
-        <div class="login-form-user-input-textfield-container"> 
-            <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-mail-address-field">
-                <mat-label>Email address</mat-label>
-                <input #userMailAddress type="email" matInput [formControl]="emailFormControl" placeholder="Ex. name@example.com">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
-            </mat-form-field>
-    
-            <a href="placeholder" class="login-form-forgot-password-link" tabindex="-1">Forgot password</a> 
+  <div class="login-form-user-input-textfield-container">
+    <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-mail-address-field">
+      <mat-label>Email address</mat-label>
+      <input #userMailAddress [formControl]="emailFormControl" matInput placeholder="Ex. name@example.com" type="email">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a
+        valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
+    </mat-form-field>
 
-            <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-password-field"> 
-                <mat-label>Password</mat-label>
-                <input #userPassword (keydown.enter)="onLogInWith(userMailAddress.value, userPassword.value)" matInput [type]="hide ? 'password' : 'text'">
-                <button tabindex="-1" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
-            </mat-form-field>
-        </div>
+    <a class="login-form-forgot-password-link" href="placeholder" tabindex="-1">Forgot password</a>
 
-        <div class="login-form-login-button-container"> 
-            <button mat-raised-button type="submit" class="login-form-login-button" color="primary" (click)="onLogInWith(userMailAddress.value, userPassword.value)">Log in</button>
-        </div>
+    <mat-form-field appearance="outline" class="login-form-user-field" id="login-form-password-field">
+      <mat-label>Password</mat-label>
+      <input #userPassword (keydown.enter)="onLogInWith(userMailAddress.value, userPassword.value)" [type]="hide ? 'password' : 'text'"
+             matInput>
+      <button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button matSuffix
+              tabindex="-1">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
 
-        <div class="login-form-register-hint-container">
-            <p class="login-form-register-hint">Don't have a xCalendar account? <a routerLink="/registration" tabindex="-1">Register now</a></p> 
-        </div>
-    </div>  
+  <div class="login-form-login-button-container">
+    <button (click)="onLogInWith(userMailAddress.value, userPassword.value)" class="login-form-login-button" color="primary" mat-raised-button
+            type="submit">Log in
+    </button>
+  </div>
+
+  <div class="login-form-register-hint-container">
+    <p class="login-form-register-hint">Don't have a xCalendar account? <a routerLink="/registration" tabindex="-1">Register
+      now</a></p>
+  </div>
+</div>
 </body>

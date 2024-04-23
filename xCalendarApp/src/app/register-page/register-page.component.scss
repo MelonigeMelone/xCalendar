@@ -1,114 +1,96 @@
-body
-{
-    background-image: url("../../assets/img/color-fade-bg.png");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+body {
+  background-image: url("../../assets/img/color-fade-bg.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
-.register-form
-{
-    margin: auto;
-    width: 50%;
-    margin-top: 8vh; 
-    padding-left: 2vw;
-    padding-top: 4vh;
-    padding-bottom: 1vh; 
-    border-radius: 8px;
-    background-color: whitesmoke; 
-    display: grid;
-    width:fit-content;
+.register-form {
+  margin: 8vh auto auto;
+  padding-left: 2vw;
+  padding-top: 4vh;
+  padding-bottom: 1vh;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  display: grid;
+  width: fit-content;
 }
 
-.register-headline-image-container
-{
-    display: flex;
-    width: fit-content;
+.register-headline-image-container {
+  display: flex;
+  width: fit-content;
 
-    img
-    {
-        height: 5.5vh;
-        margin-left: 2vw;
-    } 
+  img {
+    height: 5.5vh;
+    margin-left: 2vw;
+  }
 }
 
-.register-form-separator
-{
-    margin-left: 0;
+.register-form-separator {
+  margin-left: 0;
+  margin-right: 2vw;
+  margin-bottom: 4vh;
+
+  hr {
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+
+h2 {
+  margin-left: 7.5vw;
+  margin-bottom: 4vh;
+  color: rgb(63, 81, 181);
+  cursor: default;
+}
+
+.register-form-user-input-textfield-container {
+  display: grid;
+  width: fit-content;
+
+  .register-form-user-field {
+    width: 21vw;
+    margin-bottom: 1.5vh;
+  }
+}
+
+.register-form-register-button-container {
+  display: flex;
+  margin-top: 6vh;
+  width: fit-content;
+
+  button {
+    width: 21vw;
     margin-right: 2vw;
-    margin-bottom: 4vh;
+    background-image: linear-gradient(to right, rgba(169, 33, 98, 1), rgba(0, 144, 162, 1));
 
-    hr 
-    {
-        margin-left: 0px;
-        width: 100%; 
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }
 
-h2
-{
-    margin-left: 7.5vw;
-    margin-bottom: 4vh;         
-    color: rgb(63, 81, 181); 
-    cursor: default;
-}
+.register-form-login-hint-container {
+  width: fit-content;
+  margin-top: 2.5vh;
+  margin-left: 3.5vw;
 
-.register-form-user-input-textfield-container
-{
-    display: grid;
-    width:fit-content;
-
-    .register-form-user-field
-    {
-        width: 21vw;
-        margin-bottom: 1.5vh;
-    }
-}
-
-.register-form-register-button-container
-{
-    display: flex;
-    margin-top: 6vh;
-    width: fit-content;
-
-    button 
-    {
-        width: 21vw;
-        margin-right: 2vw;
-        background-image: linear-gradient(to right, rgba(169, 33, 98, 1), rgba(0, 144, 162, 1));
-
-        &:hover
-        {
-            text-decoration: underline;
-        }
-    }
-}
-
-.register-form-login-hint-container
-{
-    width: fit-content;
-    margin-top: 2.5vh;
-    margin-left: 3.5vw;
-
-    p 
-    {
-        font-size: small;
-        color: rgba(0, 0, 0, 0.75); 
-        cursor: default;
-    }
-}
-
-a 
-{
+  p {
     font-size: small;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgb(63, 81, 181);
-            
-    &:hover
-    {
-        text-decoration: underline;
-    }
+    color: rgba(0, 0, 0, 0.75);
+    cursor: default;
+  }
+}
+
+a {
+  font-size: small;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(63, 81, 181);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
