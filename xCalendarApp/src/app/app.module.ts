@@ -17,11 +17,12 @@ import {LandingPageComponent} from './landing-page/landing-page.component';
 import {GraphQLModule} from './graphql.module';
 import {HttpClientModule} from '@angular/common/http';
 import {CountriesComponent} from './countries/countries.component';
+import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountriesComponent,
+    CountriesComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -37,8 +38,10 @@ import {CountriesComponent} from './countries/countries.component';
     LoginPageComponent,
     RegisterPageComponent,
     LandingPageComponent,
+    FlappyBirdComponent,
     GraphQLModule,
     HttpClientModule
+
   ]
 })
 export class AppModule {

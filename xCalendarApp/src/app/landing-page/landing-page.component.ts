@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {HeaderComponent} from '../header/header.component';
@@ -16,6 +16,7 @@ import {FooterComponent} from '../footer/footer.component';
 })
 export class LandingPageComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
+  private router: Router = inject(Router);
   userMailAddress = "null";
   userPassword = "null";
   date = "null";
@@ -25,4 +26,7 @@ export class LandingPageComponent {
     this.userPassword = String(this.route.snapshot.params['userPassword']);
     this.date = new Date().toLocaleDateString();
   }
+navigateToMinigame() {
+    this.router.navigate(['flappy-bird'])
+}
 }
