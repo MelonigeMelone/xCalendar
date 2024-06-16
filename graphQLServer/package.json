@@ -1,0 +1,21 @@
+{
+  "name": "graphqlserver",
+  "version": "1.0.0",
+  "description": "server for local \"GraphQL\"-server",
+  "main": "server.js",
+  "scripts": {
+    "dev:server": "nodemon server.js"
+  },
+  "author": "David Bohr",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-graphql": "^0.12.0",
+    "nodemon": "^3.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.1.2"
+  }
+}
