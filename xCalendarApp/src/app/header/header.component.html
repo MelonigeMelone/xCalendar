@@ -7,7 +7,17 @@
                 <img src="assets/img/profile-pic.png"> 
               </div>
               <div class="username">
-                <h3>{{ userMailAddress }}</h3>
+                <div *ngIf="loading">
+                Loading...</div>
+                <div *ngIf="error">
+                Error...
+                </div>
+                <div *ngIf="userData">
+                  <div *ngFor="let user of userData">
+                    <h3>{{user.username}}</h3>
+                  </div>
+                </div>
+                
               </div>
             </a>
         </mat-toolbar>        
