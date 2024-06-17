@@ -18,7 +18,7 @@ import {GraphQLModule} from './graphql.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {CountriesComponent} from './countries/countries.component';
 import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
-import { CalendarComponent } from './calendar/calendar.component';
+import {CalendarComponent } from './calendar/calendar.component';
 
 
 @NgModule({ declarations: [
