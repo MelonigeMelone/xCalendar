@@ -29,12 +29,16 @@ export class FlappyBirdComponent{
     this.resetGame();
     this.updateGame();
   }
-
+  
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     if (event.code === 'Space') {
       this.bird.velocity = this.bird.lift;
     }
+  }
+  @HostListener('window:mousedown')
+  handleMouseDown() {
+    this.bird.velocity = this.bird.lift;
   }
 
   resetGame() {
