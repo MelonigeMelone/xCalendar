@@ -105,6 +105,7 @@ body {
     border-collapse: collapse;
     margin-top: 1em;
     color: whitesmoke;
+    background-color: rgb(51, 58, 79);
   }
 
   .events-table th, .events-table td {
@@ -114,7 +115,7 @@ body {
   }
 
   .events-table th {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(44, 48, 59);
   }
 
   .events-table tr:nth-child(even) {

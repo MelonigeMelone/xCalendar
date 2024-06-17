@@ -1,0 +1,31 @@
+<header>
+  <app-header></app-header>
+</header>
+<body>
+  <div class="content-container">
+    <div class="calendar">
+      <div class="header">
+        <button (click)="previousMonth()">
+          <p> < </p>
+        </button>
+        <h2>{{ currentMonth.format('MMMM YYYY') }}</h2>
+        <button (click)="nextMonth()">
+          <p> > </p>
+        </button>
+      </div>
+      <div class="weekdays">
+        <div class="weekday" *ngFor="let weekday of getWeekdays()"><p>{{ weekday }}</p></div>
+      </div>
+      <div class="days">
+        <div class="day" *ngFor="let day of getCalendar()" [class.inside-month]="day.inMonth">
+          <p class="date">{{ day.day.format('D') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+

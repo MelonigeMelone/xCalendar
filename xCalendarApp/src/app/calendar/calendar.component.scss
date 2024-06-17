@@ -1,0 +1,101 @@
+body {
+  background-color: rgb(52, 61, 63);
+
+  .content-container {
+    height: 92%;
+    padding: 1em 4em;
+    background-image: url("../../assets/img/item-background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+
+    .calendar {
+      width: 100%;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3vh;
+        color: whitesmoke;
+        font-weight: bold;
+
+        h2 {
+          font-size: 4vh;
+        }
+
+        p {
+          color: whitesmoke;
+          font-size: 4vh;
+        }
+
+      }
+
+      .weekdays {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #ccc;
+        margin-top: 3vh;
+        margin-bottom: 2vh;
+      }
+
+      .weekday {
+        width: calc(100% / 7);
+        text-align: center;
+
+        p {
+          color: whitesmoke;
+          font-weight: bold;
+          font-size: 3vh;
+        }
+      }
+
+      .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+      }
+
+      .day {
+        text-align: center;
+        padding: 5px;
+        background-color: rgb(51, 58, 79);
+        border-bottom-color: rgb(255, 64, 129);
+        border-bottom-style: solid;
+        border-top-width: 1px;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        margin-bottom: 2vh;
+        height: 7vh;
+
+        p {
+          text-align: left;
+          margin-top: 1vh;
+          margin-left: 1vw;
+          font-size: 2vh;
+          font-weight: bold;
+          color: #666666;
+        }
+
+      }
+
+      .inside-month {
+        p {
+          color: whitesmoke;
+        }
+      }
+
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      button mat-icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+}
