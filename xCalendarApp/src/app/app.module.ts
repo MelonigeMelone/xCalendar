@@ -15,34 +15,27 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import {RegisterPageComponent} from './register-page/register-page.component';
 import {LandingPageComponent} from './landing-page/landing-page.component';
 import {GraphQLModule} from './graphql.module';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {CountriesComponent} from './countries/countries.component';
 import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    CountriesComponent
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    LoginPageComponent,
-    RegisterPageComponent,
-    LandingPageComponent,
-    FlappyBirdComponent,
-    GraphQLModule,
-    HttpClientModule
 
-  ]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        CountriesComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        LoginPageComponent,
+        RegisterPageComponent,
+        LandingPageComponent,
+        FlappyBirdComponent,
+        GraphQLModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 }
