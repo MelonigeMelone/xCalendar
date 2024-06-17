@@ -47,7 +47,25 @@
     </table>
   </div>
   <div class="item" id="item-4"><h3>Maps</h3></div>
-  <div class="item" id="item-5"><h3>Weather Forecast</h3></div>
+  <div class="item" id="item-5"><h3>Weather Forecast</h3>
+    <table class="events-table">
+      <tr>
+        <th>Standort</th>
+        <th>Temperatur</th>
+        <th>Gefühlte Temperatur</th>
+        <th>Regen</th>
+        <th>Wetter</th>
+      </tr>
+      <tr>
+        <td>Karlsruhe</td>
+        <td>{{weatherData?.current?.temperature_2m}} °C</td>
+        <td>{{weatherData?.current?.apparent_temperature}} °C</td>
+        <td>{{weatherData?.current?.rain}} mm</td>
+        <td>{{weatherService.getWeatherDescription(weatherData?.current?.weather_code)}}</td>
+      </tr>
+    </table>
+
+  </div>
   <div class="item" id="item-6"><h3>Chats</h3></div>
   <div class="item" id="item-7" (click)="navigateToMinigame()"><h3>Minigame</h3></div>
 </div>
