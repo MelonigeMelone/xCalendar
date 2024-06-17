@@ -69,7 +69,6 @@ export class HeaderComponent implements OnInit{
     }).valueChanges.pipe(
       map(result => result.data.user)
     );
-
   }
 
   onClickHome() {
