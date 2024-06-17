@@ -120,4 +120,43 @@ body {
   .events-table tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.1);
   }
+
+  .calendar-week-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .calendar-week-preview-day {
+    display: block;
+    width: 10vw;
+    height: 10vh;
+    margin-left: 1vw;
+    background-color: rgb(44, 48, 59);
+
+    .weekDayContainer {
+      background-color: rgb(51, 58, 79);
+      border-top-color: rgb(255, 64, 129);
+      border-top-style: solid;
+      border-top-width: 1px;
+      margin-bottom: 0;
+    }
+
+    .weekDay {
+      text-align: center;
+      margin-bottom: 0;
+      padding-bottom: 1vh;
+      padding-top: 1vh;
+      font-size: 2vh;
+    }
+
+    .date {
+      text-align: left;
+      margin-top: 1vh;
+      font-size: 3vh;
+      font-weight: bold;
+      margin-left: 1vw;
+    }
+  }
 }

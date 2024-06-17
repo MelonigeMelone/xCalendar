@@ -22,19 +22,39 @@ export class LandingPageComponent implements OnInit{
   userPassword = "null";
   date = "null";
   weatherData: WeatherResponse | undefined;
+  upcomingDays: { date: number, weekday: string }[] = [];
 
   constructor(protected weatherService: WeatherService) {
     this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
     this.userPassword = String(this.route.snapshot.params['userPassword']);
     this.date = new Date().toLocaleDateString();
   }
-navigateToMinigame() {
-    this.router.navigate(['flappy-bird'])
-}
+  navigateToMinigame() {
+      this.router.navigate(['flappy-bird'])
+  }
+  navigateToCalendar() {
+      this.router.navigate(['calendar'])
+
+  }
 
   ngOnInit(): void {
+    this.generateUpcomingDays();
     this.weatherService.getWeather().subscribe(data => {
       this.weatherData = data;
     });
+  }
+
+  generateUpcomingDays(): void {
+    const daysOfWeek = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+    const today = new Date();
+
+    for (let i = 0; i <= 4; i++) {
+      const futureDate = new Date();
+      futureDate.setDate(today.getDate() + i);
+      const date = futureDate.getDate();
+      const weekday = daysOfWeek[futureDate.getDay()];
+
+      this.upcomingDays.push({ date, weekday });
+    }
   }
 }

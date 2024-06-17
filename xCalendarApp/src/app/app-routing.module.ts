@@ -6,6 +6,7 @@ import {LandingPageComponent} from './landing-page/landing-page.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {WelcomePageComponent} from './welcome-page/welcome-page.component';
 import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
+import {CalendarComponent} from "./calendar/calendar.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path: 'registration', component: RegisterPageComponent, title: 'xCalendar - Registration'},
   {path: 'home/:userMailAddress/:userPassword', component: LandingPageComponent, title: 'xCalendar - Home'},
   {path: 'profile/:userMailAddress/:userPassword', component: UserProfileComponent, title: 'xCalendar - Profile'},
-  {path: 'flappy-bird', component: FlappyBirdComponent, title: 'xCalendar - Mini - Game'}
+  {path: 'flappy-bird', component: FlappyBirdComponent, title: 'xCalendar - Mini - Game'},
+  {path: 'calendar', component: CalendarComponent, title: 'xCalendar - Kalendar'},
+
 ];
 
 @NgModule({
