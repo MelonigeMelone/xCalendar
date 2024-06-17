@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "johne_doe",
+      "email": "jdoe@mail.com",
+      "password": "pass1234"
+    },
+    {
+      "id": "2",
+      "name": "d_abert",
+      "email": "d_bohr@mail.com",
+      "password": "pass1234"
+    },
+    {
+      "id": "3",
+      "name": "d.bohr",
+      "email": "d.bohr@mail.com",
+      "password": "pass1234"
+    },
+    {
+      "id": "4",
+      "name": "tobias_eberle.123",
+      "email": "tobias_eberle@mail.com",
+      "password": "pass1234"
+    },
+    {
+      "id": "5",
+      "name": "paul.aner_kuhn",
+      "email": "p.kuhn@mail.com",
+      "password": "pass1234"
+    },
+    {
+      "id": "9",
+      "email": "test@mail.com",
+      "name": "peter",
+      "password": "peter1234"
+    },
+    {
+      "id": "8",
+      "email": "test4@mail.com",
+      "name": "hans",
+      "password": "hansi1234"
+    }
+  ]
+}
