@@ -4,6 +4,7 @@
   "description": "server for local \"GraphQL\"-server",
   "main": "index.js",
   "scripts": {
+    "gql-services:server": "node server.js",
     "dev:server": "nodemon index.js",
     "json:server": "json-server --watch data.json"
   },
