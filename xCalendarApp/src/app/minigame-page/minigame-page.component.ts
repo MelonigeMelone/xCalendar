@@ -36,6 +36,10 @@ export class FlappyBirdComponent{
       this.bird.velocity = this.bird.lift;
     }
   }
+  @HostListener('window:mousedown')
+  handleMouseDown() {
+    this.bird.velocity = this.bird.lift;
+  }
 
   resetGame() {
     this.bird.y = 150;
