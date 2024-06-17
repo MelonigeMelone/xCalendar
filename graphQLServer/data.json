@@ -29,18 +29,6 @@
       "name": "paul.aner_kuhn",
       "email": "p.kuhn@mail.com",
       "password": "pass1234"
-    },
-    {
-      "id": "9",
-      "email": "test@mail.com",
-      "name": "peter",
-      "password": "peter1234"
-    },
-    {
-      "id": "8",
-      "email": "test4@mail.com",
-      "name": "hans",
-      "password": "hansi1234"
     }
   ]
 }
