@@ -94,9 +94,30 @@ body {
   #item-7 {
     margin: 2em 3em 2em 3em;
     grid-area: sieben;
+    background-image: url('../../assets/img/flappy_bird_banner_by_storesnurr_d7e1j2g-fullview.jpg');
 
     &:hover {
       margin: 1em 2em 1em 2em;
     }
+  }
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    color: whitesmoke;
+  }
+
+  .events-table th, .events-table td {
+    border: 1px solid whitesmoke;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .events-table th {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .events-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
