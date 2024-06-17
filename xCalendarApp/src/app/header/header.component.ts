@@ -5,7 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Router } from '@angular/router';
 import { Apollo } from 'apollo-angular';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 import gql from 'graphql-tag';
 
 interface User{
@@ -53,7 +53,8 @@ const GET_USER = gql`
 })
 export class HeaderComponent implements OnInit{
   route: ActivatedRoute = inject(ActivatedRoute);
-  user$: Observable<User[]>
+  // @ts-ignore
+  user$: Observable<User>
   userMailAddress = "null";
   userPassword = "null";
   userData: any[] = [];
@@ -63,10 +64,13 @@ export class HeaderComponent implements OnInit{
   constructor(private router: Router, private apollo: Apollo) {  }
 
   ngOnInit(): void {
-    this.user$=this.apollo.watchQuery<Response>({
+    this.user$ = this.apollo.watchQuery<Response>({
       query: GET_USER,
-    }).valueChanges.pipe(result => result.data.user);
-      
+    }).valueChanges.pipe(
+      map(result => result.data.user)
+    );
+
+
   }
 
   onClickHome() {
