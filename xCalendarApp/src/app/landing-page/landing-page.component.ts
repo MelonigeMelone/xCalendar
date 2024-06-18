@@ -30,10 +30,10 @@ export class LandingPageComponent implements OnInit{
     this.date = new Date().toLocaleDateString();
   }
   navigateToMinigame() {
-      this.router.navigate(['flappy-bird'])
+      this.router.navigate(['flappy-bird', this.userMailAddress, this.userPassword])
   }
   navigateToCalendar() {
-      this.router.navigate(['calendar'])
+      this.router.navigate(['calendar', this.userMailAddress, this.userPassword])
 
   }
 
