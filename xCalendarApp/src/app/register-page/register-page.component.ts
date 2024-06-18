@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { NgIf } from '@angular/common';
 
 import { MatInputModule } from '@angular/material/input';
@@ -16,11 +21,26 @@ import { RouterModule } from '@angular/router';
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss'],
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, NgIf, MatIconModule, MatButtonModule, MatCheckboxModule, MatMenuModule, RouterModule]
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    NgIf,
+    MatIconModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    RouterModule,
+  ],
 })
-export class RegisterPageComponent 
-{
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  usernameFormControl = new FormControl('', [Validators.required]);  
-  hide = true; 
+export class RegisterPageComponent {
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  usernameFormControl = new FormControl('', [Validators.required]);
+
+  hide = true;
 }

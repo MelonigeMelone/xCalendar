@@ -10,21 +10,29 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, HeaderComponent, SidenavComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    HeaderComponent,
+    SidenavComponent,
+    FooterComponent,
+  ],
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss'], 
+  styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent 
-{
-  route: ActivatedRoute = inject(ActivatedRoute); 
-  userMailAddress = "null";
-  userPassword = "null";
-  date = "null";
+export class LandingPageComponent {
+  route: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor()
-  {
-    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
-    this.userPassword = String(this.route.snapshot.params['userPassword']); 
+  userMailAddress = 'null';
+
+  userPassword = 'null';
+
+  date = 'null';
+
+  constructor() {
+    this.userMailAddress = String(this.route.snapshot.params.userMailAddress);
+    this.userPassword = String(this.route.snapshot.params.userPassword);
     this.date = new Date().toLocaleDateString();
   }
 }

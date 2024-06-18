@@ -8,7 +8,7 @@ describe('SidenavComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SidenavComponent]
+      imports: [SidenavComponent],
     });
     fixture = TestBed.createComponent(SidenavComponent);
     component = fixture.componentInstance;

@@ -9,17 +9,17 @@ import { FooterComponent } from '../footer/footer.component';
   standalone: true,
   imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  styleUrls: ['./user-profile.component.scss'],
 })
-export class UserProfileComponent 
-{
-  route: ActivatedRoute = inject(ActivatedRoute); 
-  userMailAddress = "null";
-  userPassword = "null";
+export class UserProfileComponent {
+  route: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor()
-  {
-    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
-    this.userPassword = String(this.route.snapshot.params['userPassword']); 
+  userMailAddress = 'null';
+
+  userPassword = 'null';
+
+  constructor() {
+    this.userMailAddress = String(this.route.snapshot.params.userMailAddress);
+    this.userPassword = String(this.route.snapshot.params.userPassword);
   }
 }
