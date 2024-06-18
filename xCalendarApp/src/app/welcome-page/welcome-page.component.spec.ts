@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {WelcomePageComponent} from './welcome-page.component';
+import { WelcomePageComponent } from './welcome-page.component';
 
 describe('WelcomePageComponent', () => {
   let component: WelcomePageComponent;
@@ -8,7 +8,7 @@ describe('WelcomePageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [WelcomePageComponent]
+      imports: [WelcomePageComponent],
     });
     fixture = TestBed.createComponent(WelcomePageComponent);
     component = fixture.componentInstance;

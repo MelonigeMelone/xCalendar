@@ -1,96 +1,138 @@
-body {
-  background-image: url("../../assets/img/color-fade-bg.png");
-  height: 100%;
-  background-position: center;
+.background {
+  background-image: url("../../assets/img/welcome-background.png");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+  background-position: bottom;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .register-form {
-  margin: 8vh auto auto;
-  padding-left: 2vw;
-  padding-top: 4vh;
-  padding-bottom: 1vh;
-  border-radius: 8px;
-  background-color: whitesmoke;
-  display: grid;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  transform: translate(50%, -40%);
+  padding: 0 0 2em 0;
+  border-radius: 0.5em;
   width: fit-content;
-}
-
-.register-headline-image-container {
-  display: flex;
-  width: fit-content;
-
-  img {
-    height: 5.5vh;
-    margin-left: 2vw;
-  }
-}
-
-.register-form-separator {
-  margin-left: 0;
-  margin-right: 2vw;
-  margin-bottom: 4vh;
-
-  hr {
-    margin-left: 0px;
-    width: 100%;
-  }
-}
-
-h2 {
-  margin-left: 7.5vw;
-  margin-bottom: 4vh;
-  color: rgb(63, 81, 181);
+  margin: auto;
   cursor: default;
 }
 
-.register-form-user-input-textfield-container {
-  display: grid;
-  width: fit-content;
-
-  .register-form-user-field {
-    width: 21vw;
-    margin-bottom: 1.5vh;
+.xcal-logo-container {
+  img {
+    height: 4em;
+    padding: 0.5em 1em 0 1em;
   }
 }
 
-.register-form-register-button-container {
-  display: flex;
-  margin-top: 6vh;
-  width: fit-content;
+.horizontal-line {
+  width: 75%;
+  margin: 0 auto;
+  height: 0.05em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  button {
-    width: 21vw;
-    margin-right: 2vw;
-    background-image: linear-gradient(to right, rgba(169, 33, 98, 1), rgba(0, 144, 162, 1));
+.registration-headline {
+  width: fit-content;
+  margin: 1.5em auto 2em auto;
+  padding: 0;
+
+  h2 {
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+.user-information-container {
+  .user-input-container {
+    text-align: center;
+    margin-bottom: 1em;
+    text-indent: 3em;
+    font-size: small;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2em;
+  }
+
+  label {
+    margin: auto 0;
+  }
+
+  .input-error-state {
+    background-color: rgba(255, 0, 0, 0.75);
+
+    &:focus {
+      border: none;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  input {
+    margin-right: 4em;
+    height: 2em;
+    border: none;
+    border-radius: 1em;
+    text-indent: 0.5em;
+    background-color: rgba(0, 0, 0, 0.4);
 
     &:hover {
-      text-decoration: underline;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(0, 0, 0, 0.25);
     }
   }
 }
 
-.register-form-login-hint-container {
-  width: fit-content;
-  margin-top: 2.5vh;
-  margin-left: 3.5vw;
+.submit-registration-button-container {
+  margin-top: 2em;
 
-  p {
+  button {
+    width: 75%;
+    margin: 0 auto;
+    height: 3em;
+    cursor: pointer;
+    background-color: rgba(63, 81, 181, 0.75);
+    border: none;
+    border-radius: 2em;
+    font-weight: bold;
     font-size: small;
-    color: rgba(0, 0, 0, 0.75);
-    cursor: default;
+
+    &:hover {
+      text-decoration: underline;
+      background-color: rgb(63, 81, 181);
+    }
   }
 }
 
-a {
-  font-size: small;
-  font-weight: bold;
-  text-decoration: none;
-  color: rgb(63, 81, 181);
+.error-message-container {
+  margin: 2em 0 0 0;
+  text-align: center;
 
-  &:hover {
-    text-decoration: underline;
+  p {
+    margin: 0;
+    font-size: small;
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.login-container {
+  font-size: small;
+
+  a {
+    font-weight: bold;
+    color: rgb(58, 1, 58);
+    text-decoration: none;
+
+    &:hover {
+      color: blue;
+      text-decoration: underline;
+    }
   }
 }

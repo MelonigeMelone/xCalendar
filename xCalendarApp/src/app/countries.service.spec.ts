@@ -1,9 +1,8 @@
-import {Apollo, gql} from 'apollo-angular';
-import {map, Observable} from 'rxjs';
+import { Apollo, gql } from 'apollo-angular';
+import { map, Observable } from 'rxjs';
 
-import {Country} from './graphql-models/Country';
-import {Injectable} from '@angular/core';
-
+import { Injectable } from '@angular/core';
+import { Country } from './graphql-models/Country';
 
 // write a GraphQL query that asks for information (name , capital, etc..) about all countries
 const COUNTRIES = gql`
@@ -25,8 +24,7 @@ const COUNTRIES = gql`
   providedIn: 'root',
 })
 export class CountriesService {
-  constructor(private apollo: Apollo) {
-  }
+  constructor(private apollo: Apollo) {}
 
   getCountries(): Observable<Country[]> {
     return this.apollo

@@ -1,56 +1,88 @@
-<body>
-<div class="register-form">
-  <div class="register-headline-image-container">
-    <img alt="" src="assets/img/xcalendar-logo.png">
-  </div>
+<div class="background">
+  <div class="register-form">
+    <div class="xcal-logo-container">
+      <img src="assets/img/xcalendar-logo.png" alt="xcal-logo" />
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="registration-headline">
+      <h2>Registration</h2>
+    </div>
+    <div class="user-information-container">
+      <div class="user-input-container">
+        <label for="username-input">Username*</label>
+        <input
+          #username
+          [ngClass]="{ 'input-error-state': usernameHasError }"
+          type="text"
+          id="username-input"
+          (click)="resetErrorStateOfUsername()"
+        />
+      </div>
+      <div class="user-input-container">
+        <label for="email-input">E-Mail</label>
+        <input
+          #email
+          type="email"
+          id="email-input"
+          [ngClass]="{ 'input-error-state': emailHasError }"
+          (click)="resetErrorStateOfEmail()"
+        />
+      </div>
+      <div class="user-input-container">
+        <label for="phone-input">Phone</label>
+        <input
+          #phone
+          type="tel"
+          id="phone-input"
+          [ngClass]="{ 'input-error-state': phoneHasError }"
+          (click)="resetErrorStateOfPhone()"
+        />
+      </div>
+      <div class="user-input-container">
+        <label for="password-input">Password*</label>
+        <input
+          #password
+          type="password"
+          id="password-input"
+          (click)="resetErrorStateOfPassword()"
+          [ngClass]="{ 'input-error-state': passwordHasError }"
+        />
+      </div>
+      <div class="user-input-container">
+        <label for="confirm-password-input">Confirm password*</label>
+        <input
+          #confirmedPassword
+          type="password"
+          [ngClass]="{ 'input-error-state': passwordHasError }"
+          id="confirm-password-input"
+          (click)="resetErrorStateOfPassword()"
+        />
+      </div>
+    </div>
+    <div class="error-message-container">
+      <p class="error-message">{{ errorMsg }}</p>
+    </div>
 
-  <div class="register-form-separator">
-    <hr>
-  </div>
-
-  <div class="register-form-headline">
-    <h2>Registration</h2>
-  </div>
-
-  <div class="register-form-user-input-textfield-container">
-    <mat-form-field appearance="outline" class="register-form-user-field" id="user-username-field">
-      <mat-label>Username</mat-label>
-      <input [formControl]="usernameFormControl" matInput placeholder="Username to show" type="username">
-      <mat-error *ngIf="usernameFormControl.hasError('required')">Username is <strong>required</strong></mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="register-form-user-field" id="user-mail-address-field">
-      <mat-label>Email address</mat-label>
-      <input [formControl]="emailFormControl" matInput placeholder="Ex. name@example.com" type="email">
-
-      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a
-        valid email address
-      </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">Email is <strong>required</strong></mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="register-form-user-field" id="user-password-field">
-      <mat-label>Password</mat-label>
-      <input matInput>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="register-form-user-field" id="user-confirm-password-field">
-      <mat-label>Confirm Password</mat-label>
-      <input [type]="hide ? 'password' : 'text'" matInput>
-      <button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button matSuffix
-              tabindex="-1">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <div class="submit-registration-button-container">
+      <button
+        class="submit-registration"
+        (click)="
+          onFormSubmit(
+            username.value,
+            email.value,
+            phone.value,
+            password.value,
+            confirmedPassword.value
+          )
+        "
+      >
+        Register now
       </button>
-    </mat-form-field>
-  </div>
-
-  <div class="register-form-register-button-container">
-    <button class="register-form-register-button" color="primary" mat-raised-button>Register now</button>
-  </div>
-
-  <div class="register-form-login-hint-container">
-    <p class="register-form-login-hint">Already have a xCalendar account? <a routerLink="/login" tabindex="-1">Log
-      in</a></p>
+    </div>
+    <div class="login-container">
+      <p>
+        Already have an xCalendar account? <a routerLink="/login">Log in</a>
+      </p>
+    </div>
   </div>
 </div>
-</body>
