@@ -15,8 +15,8 @@ const routes: Routes = [
   {path: 'registration', component: RegisterPageComponent, title: 'xCalendar - Registration'},
   {path: 'home/:userMailAddress/:userPassword', component: LandingPageComponent, title: 'xCalendar - Home'},
   {path: 'profile/:userMailAddress/:userPassword', component: UserProfileComponent, title: 'xCalendar - Profile'},
-  {path: 'flappy-bird', component: FlappyBirdComponent, title: 'xCalendar - Mini - Game'},
-  {path: 'calendar', component: CalendarComponent, title: 'xCalendar - Kalendar'},
+  {path: 'flappy-bird/:userMailAddress/:userPassword', component: FlappyBirdComponent, title: 'xCalendar - Mini - Game'},
+  {path: 'calendar/:userMailAddress/:userPassword', component: CalendarComponent, title: 'xCalendar - Kalendar'},
 
 ];
 
