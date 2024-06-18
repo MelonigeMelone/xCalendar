@@ -1,26 +1,27 @@
 <header>
+  <div class="app-header">
     <div class="app-header">
-        <mat-toolbar class="app-header"> 
-          <button (click)="onClickHome()"><img src="assets/img/xcalendar-logo-accent.png" class="xcalendar-logo"></button>
-            <a class="user-profile-link" (click)="onClickProfile()"> 
-              <div class="user-profile-picture">
-                <img src="assets/img/profile-pic.png"> 
-              </div>
-              <div class="username">
-                <div *ngIf="loading">
-                Loading...</div>
-                <div *ngIf="error">
-                Error...
-                </div>
-                <div *ngIf="userData">
-                  <div *ngFor="let user of userData">
-                    <h3>{{user.username}}</h3>
-                  </div>
-                </div>
-                
-              </div>
-            </a>
-        </mat-toolbar>        
-    </div> 
-    <hr class="fade-out-header">
+      <button (click)="onClickHome()">
+        <img
+          src="assets/img/xcalendar-logo-accent.png"
+          class="xcalendar-logo"
+        />
+      </button>
+      <a class="user-profile-link" (click)="onClickProfile()">
+        <div class="user-profile-picture">
+          <img src="assets/img/profile-pic.png" />
+        </div>
+        <div class="username">
+          <div *ngIf="loading">Loading...</div>
+          <div *ngIf="error">Error...</div>
+          <div *ngIf="userData">
+            <div *ngFor="let user of userData">
+              <h3>{{ user.username }}</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <hr class="fade-out-header" />
 </header>

@@ -1,8 +1,6 @@
 import { Component, OnInit, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ActivatedRoute, RouterModule, Router } from "@angular/router";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
 
 import { Apollo } from "apollo-angular";
 import { map, Observable } from "rxjs";
@@ -11,7 +9,7 @@ import gql from "graphql-tag";
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
@@ -31,10 +29,7 @@ export class HeaderComponent {
 
   error: any;
 
-  constructor(
-    private router: Router,
-    private apollo: Apollo,
-  ) {}
+  constructor(private router: Router) {}
 
   onClickHome() {
     this.router.navigate(["/home", this.userMailAddress, this.userPassword]);
