@@ -12,8 +12,8 @@ const GET_USER_DATA = gql`
 `;
 
 const ADD_USER_DATA = gql`
-  mutation createUser($id: String!, $email: String!, $name: String!, $password: String!) {
-    createUser(id: $id, email: $email, name: $name, password: $password)
+  mutation addUser($id: String!, $email: String!, $name: String!, $password: String!) {
+    addUser(id: $id, email: $email, name: $name, password: $password)
     id
     email
     name

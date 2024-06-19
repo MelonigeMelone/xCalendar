@@ -56,7 +56,7 @@ export class RegisterPageComponent {
     ) {
       this.errorMsg = '';
       this.userService.addUser(email, username, password);
-      this.router.navigate(['home/:username/:password']);
+      this.router.navigate(['home', username]);
     }
   }
 

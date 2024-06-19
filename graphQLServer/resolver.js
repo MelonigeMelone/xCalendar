@@ -6,7 +6,7 @@ const root = {
       `http://localhost:3000/users?name=${encodeURIComponent(name)}`,
     );
     const users = await response.json();
-    return users[0];
+    return users[0]; // Nimmt das erste Element aus dem Array der Benutzer, die zurückgegeben werden
   },
 
   createUser: async ({ id, email, name, password }) => {
