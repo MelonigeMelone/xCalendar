@@ -1,0 +1,30 @@
+{
+  "name": "graphqlserver",
+  "version": "1.0.0",
+  "description": "server for local \"GraphQL\"-server",
+  "main": "index.js",
+  "scripts": {
+    "gql-services:server": "node server.js",
+    "dev:server": "nodemon index.js",
+    "json:server": "json-server --watch data.json"
+  },
+  "author": "David Bohr",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.1.2"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.4",
+    "apollo-server-express": "^3.13.0",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.8.2",
+    "json-server": "^1.0.0-beta.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^3.1.3"
+  }
+}
