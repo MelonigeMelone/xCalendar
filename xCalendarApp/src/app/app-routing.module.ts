@@ -7,6 +7,8 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {WelcomePageComponent} from './welcome-page/welcome-page.component';
 import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
 import {CalendarComponent} from "./calendar/calendar.component";
+import {CalendarDayComponent} from "./calendar-day/calendar-day.component";
+import {AppointmentInfoComponent} from "./appointment-info/appointment-info.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'profile/:userMailAddress/:userPassword', component: UserProfileComponent, title: 'xCalendar - Profile'},
   {path: 'flappy-bird/:userMailAddress/:userPassword', component: FlappyBirdComponent, title: 'xCalendar - Mini - Game'},
   {path: 'calendar/:userMailAddress/:userPassword', component: CalendarComponent, title: 'xCalendar - Kalendar'},
+  {path: 'calendar-day/:userMailAddress/:userPassword/:year/:month/:day', component: CalendarDayComponent, title: 'xCalendar - Kalendar'},
+  {path: 'appointment-info/:userMailAddress/:userPassword', component: AppointmentInfoComponent, title: 'xCalendar - Kalendar'},
 
 ];
 

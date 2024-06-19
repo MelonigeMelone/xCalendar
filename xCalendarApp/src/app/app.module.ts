@@ -19,6 +19,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import {CountriesComponent} from './countries/countries.component';
 import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
 import {CalendarComponent } from './calendar/calendar.component';
+import {CalendarDayComponent} from "./calendar-day/calendar-day.component";
+import {AppointmentInfoComponent} from "./appointment-info/appointment-info.component";
 
 
 @NgModule({ declarations: [
@@ -27,8 +29,10 @@ import {CalendarComponent } from './calendar/calendar.component';
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
+        AppointmentInfoComponent,
         BrowserAnimationsModule,
         CalendarComponent,
+        CalendarDayComponent,
         MatInputModule,
         MatFormFieldModule,
         MatButtonModule,

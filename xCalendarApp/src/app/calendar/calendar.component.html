@@ -17,7 +17,7 @@
         <div class="weekday" *ngFor="let weekday of getWeekdays()"><p>{{ weekday }}</p></div>
       </div>
       <div class="days">
-        <div class="day" *ngFor="let day of getCalendar()" [class.inside-month]="day.inMonth">
+        <div class="day" *ngFor="let day of getCalendar()" [class.inside-month]="day.inMonth" (click)="navigateToDay(day.day.format('Y'), day.day.format('M'), day.day.format('D') )">
           <p class="date">{{ day.day.format('D') }}</p>
         </div>
       </div>
