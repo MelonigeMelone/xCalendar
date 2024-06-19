@@ -6,9 +6,8 @@ import { GET_USER_DATA, ADD_USER_DATA } from '../graphql/graphql.queries';
   providedIn: 'root',
 })
 export class UserService {
-  private users: any[] = [];
+  public users: any[] = [];
 
-  // eslint-disable-next-line no-useless-constructor, no-empty-function
   constructor(private apollo: Apollo) {}
 
   private getNextId(): number {

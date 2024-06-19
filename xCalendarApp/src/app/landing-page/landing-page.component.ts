@@ -1,12 +1,10 @@
 
-/* eslint-disable prettier/prettier */
-/* eslint-disable dot-notation */
-import { Component, inject } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
+import {WeatherResponse, WeatherService} from "../weather-service/weather.service";
 
 @Component({
   selector: 'app-landing-page',
@@ -19,10 +17,12 @@ export class LandingPageComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
 
   protected userMailAddress = '';
+  weatherData: WeatherResponse | undefined;
+  upcomingDays: { date: number; weekday: string }[] = [];
 
   protected date = '';
 
-  constructor() {
+  constructor(protected router: Router, protected weatherService: WeatherService) {
     this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
     this.date = new Date().toLocaleDateString();
   }

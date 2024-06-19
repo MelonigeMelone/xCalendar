@@ -37,7 +37,7 @@ export class LoginPageComponent {
           this.errorMsg = 'The entered credentials are invalid';
         }
       }
-    });
+    }
   }
 
   protected hideErrorMsg(): void {
