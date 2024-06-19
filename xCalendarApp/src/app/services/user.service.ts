@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Apollo } from "apollo-angular";
-import { ADD_USER_DATA, GET_USER_DATA } from "../graphql/graphql.queries";
+import { GET_USER_DATA,ADD_USER_DATA } from "../graphql/graphql.queries";
 
 @Injectable({
   providedIn: "root",

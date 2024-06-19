@@ -13,8 +13,8 @@ const GET_USER_DATA = gql`
 `;
 
 const ADD_USER_DATA = gql`
-mutation createUser($id: String!, $email: String!, $name: String!, $password: String!. $phoneNumber:Number!){
-    createUser(id: $id, email: $email, name: $name, password: $password, $phoneNumber:$phoneNumber)
+mutation createUser($id: String!, $email: String!, $name: String!, $password: String!, $phoneNumber:Number!){
+    createUser(id: $id, email: $email, name: $name, password: $password, phoneNumber:$phoneNumber)
     id
     email
     name
@@ -23,4 +23,4 @@ mutation createUser($id: String!, $email: String!, $name: String!, $password: St
 }
 `;
 
-export { GET_USER_DATA, ADD_USER_DATA };
+export { GET_USER_DATA,ADD_USER_DATA };

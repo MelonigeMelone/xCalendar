@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
 import {HeaderComponent} from "../header/header.component";
 import {NgForOf} from "@angular/common";
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-calendar',
