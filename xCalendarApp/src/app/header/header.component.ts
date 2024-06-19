@@ -25,6 +25,6 @@ export class HeaderComponent {
   }
 
   onClickProfile() {
-    this.router.navigate(['/profile', this.userMailAddress]);
+    this.router.navigate(['profile', this.userMailAddress]);
   }
 }
