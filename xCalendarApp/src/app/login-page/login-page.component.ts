@@ -30,7 +30,7 @@ export class LoginPageComponent {
       if (this.userData.length < 1) {
         this.errorMsg = 'The entered user does not exist';
       } else if (this.userData.password === password) {
-        this.router.navigate(['/home', username, password]);
+        this.router.navigate(['/home', username]);
       } else {
         this.errorMsg = 'The entered credentials are invalid';
       }
