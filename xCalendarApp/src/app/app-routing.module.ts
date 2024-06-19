@@ -23,6 +23,8 @@ const routes: Routes = [
     title: 'xCalendar - Mini - Game',
   },
   { path: 'calendar/:userName', component: CalendarComponent, title: 'xCalendar - Kalendar' },
+  { path: 'calendar-day/:userName/:year/:month/:day', component: CalendarDayComponent, title: 'xCalendar - Kalendar' },
+  { path: 'appointment-info/:userName', component: AppointmentInfoComponent, title: 'xCalendar - Kalendar' },
   {
     path: 'home/:userMailAddress',
     component: LandingPageComponent,

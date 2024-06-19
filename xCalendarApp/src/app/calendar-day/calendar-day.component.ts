@@ -34,7 +34,7 @@ export class CalendarDayComponent {
   }
 
   navigateToAppointmentInfo(): void {
-    this.router.navigate(['appointment-info', this.userMailAddress, this.userPassword])
+    this.router.navigate(['appointment-info', this.userMailAddress])
   }
 
 }

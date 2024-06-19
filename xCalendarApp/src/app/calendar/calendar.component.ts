@@ -35,7 +35,7 @@ export class CalendarComponent implements OnInit {
   }
 
   navigateToDay(year: number, month: number, day: number): void {
-    this.router.navigate(['calendar-day', this.userMailAddress, this.userPassword, year, month, day])
+    this.router.navigate(['calendar-day', this.userMailAddress, year, month, day])
   }
 
   nextMonth() {

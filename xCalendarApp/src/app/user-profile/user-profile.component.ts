@@ -20,11 +20,11 @@ export class UserProfileComponent {
 
   protected username: string = '';
 
-  protected user: User;
+  protected user: User |undefined;
 
   constructor(private userService: UserService, private router: Router) {
     this.username = String(this.route.snapshot.params['userMailAddress']);
-    this.user = this.getUserInformation();
+    //this.user = this.getUserInformation();
   }
 
   private getUserInformation(): User {
