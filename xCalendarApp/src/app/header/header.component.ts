@@ -16,18 +16,15 @@ export class HeaderComponent {
 
   protected userMailAddress: string = '';
 
-  protected userPassword: string = '';
-
   constructor(private router: Router) {
     this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
-    this.userPassword = String(this.route.snapshot.params['userPassword']);
   }
 
   onClickHome() {
-    this.router.navigate(['/home', this.userMailAddress, this.userPassword]);
+    this.router.navigate(['/home', this.userMailAddress]);
   }
 
   onClickProfile() {
-    this.router.navigate(['/profile', this.userMailAddress, this.userPassword]);
+    this.router.navigate(['/profile', this.userMailAddress]);
   }
 }

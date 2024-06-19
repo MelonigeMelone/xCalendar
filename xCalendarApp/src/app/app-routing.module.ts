@@ -24,14 +24,14 @@ const routes: Routes = [
   },
   { path: 'calendar/:userName', component: CalendarComponent, title: 'xCalendar - Kalendar' },
   {
-    path: 'calendar-day/:userName/:year/:month/:day',
-    component: CalendarDayComponent,
-    title: 'xCalendar - Kalendar',
+    path: 'home/:userMailAddress',
+    component: LandingPageComponent,
+    title: 'xCalendar - Home',
   },
   {
-    path: 'appointment-info/:userName',
-    component: AppointmentInfoComponent,
-    title: 'xCalendar - Kalendar',
+    path: 'profile/:userMailAddress',
+    component: UserProfileComponent,
+    title: 'xCalendar - Profile',
   },
 ];
 
