@@ -13,11 +13,12 @@ import { UserService } from '../services/user.service';
 })
 export class LoginPageComponent {
   protected errorMsg: string;
+  protected userData!: any;
 
   // eslint-disable-next-line no-useless-constructor, no-empty-function
   constructor(
     private router: Router,
-    private userService: UserService,
+    private userService: UserService
   ) {
     this.errorMsg = '';
   }
@@ -36,7 +37,7 @@ export class LoginPageComponent {
           this.errorMsg = 'The entered credentials are invalid';
         }
       }
-    }
+    });
   }
 
   protected hideErrorMsg(): void {

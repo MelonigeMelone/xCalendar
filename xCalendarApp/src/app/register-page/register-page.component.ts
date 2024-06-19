@@ -25,14 +25,13 @@ export class RegisterPageComponent {
 
   protected phoneHasError: boolean;
 
-  private emailPattern: RegExp =
-    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  private emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   private numberPattern: RegExp = /^\d+$/;
 
   constructor(
     private userService: UserService,
-    private router: Router,
+    private router: Router
   ) {
     this.usernameHasError = false;
     this.passwordHasError = false;
@@ -46,7 +45,7 @@ export class RegisterPageComponent {
     email: string,
     phone: string,
     password: string,
-    confirmedPassword: string,
+    confirmedPassword: string
   ): void {
     if (
       !this.checkForEmptyFields(username, password) &&
@@ -63,21 +62,18 @@ export class RegisterPageComponent {
 
   private checkForEmptyFields(username: string, password: string): boolean {
     if (username === '' && password === '') {
-      this.errorMsg =
-        'Fields marked by the * Symbol are necessary and cannot be empty.';
+      this.errorMsg = 'Fields marked by the * Symbol are necessary and cannot be empty.';
       this.usernameHasError = true;
       this.passwordHasError = true;
       return true;
     }
     if (username === '') {
-      this.errorMsg =
-        'Fields marked by the * Symbol are necessary and cannot be empty.';
+      this.errorMsg = 'Fields marked by the * Symbol are necessary and cannot be empty.';
       this.usernameHasError = true;
       return true;
     }
     if (password === '') {
-      this.errorMsg =
-        'Fields marked by the * Symbol are necessary and cannot be empty.';
+      this.errorMsg = 'Fields marked by the * Symbol are necessary and cannot be empty.';
       this.passwordHasError = true;
       return true;
     }
@@ -89,8 +85,7 @@ export class RegisterPageComponent {
       if (this.numberPattern.test(phone)) {
         return true;
       }
-      this.errorMsg =
-        'The entered phone number is invalid. Please take a look.';
+      this.errorMsg = 'The entered phone number is invalid. Please take a look.';
       this.phoneHasError = true;
       return false;
     }
@@ -115,16 +110,12 @@ export class RegisterPageComponent {
     return false;
   }
 
-  private checkPasswordEquality(
-    password: string,
-    confirmedPassword: string,
-  ): boolean {
+  private checkPasswordEquality(password: string, confirmedPassword: string): boolean {
     if (password === confirmedPassword) {
       return true;
     }
     this.passwordHasError = true;
-    this.errorMsg =
-      'The entered passwords are not equal. Please check your input.';
+    this.errorMsg = 'The entered passwords are not equal. Please check your input.';
     return false;
   }
 

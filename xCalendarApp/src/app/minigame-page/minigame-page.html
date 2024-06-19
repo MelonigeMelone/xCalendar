@@ -1,0 +1,28 @@
+<header>
+  <app-header></app-header>
+</header>
+<body>
+<div id="game-container">
+  <div id="score-container">
+    <span id="score-label">Dein Score:</span>
+    <span id="score">{{ score }}</span>
+  </div>
+  <canvas id="gameCanvas"></canvas>
+  <div id="buttons">
+  <button type="button" id="resetButton" (click)="refreshGame()">Try Again!</button>
+  <button type="button" id="navHomeButton" (click)="navigateHome()">Return Home</button>
+  </div>
+  <div id="bestenliste">
+    <h2>Bestenliste</h2>
+    <ul>
+      <li>Tobias Eberle - 51 Punkte</li>
+      <li>Paul Kuhn - 45 Punkte</li>
+      <li>David Bohr - 40 Punkte</li>
+      <li>David Abert - 36 Punkte</li>
+    </ul>
+  </div>
+</div>
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>
