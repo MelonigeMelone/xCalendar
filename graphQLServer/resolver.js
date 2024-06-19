@@ -44,7 +44,7 @@ const fetch = require("node-fetch");
 const root = {
   user: async ({ name }) => {
     const response = await fetch(
-      `http://localhost:3000/users?email=${encodeURIComponent(name)}`,
+      `http://localhost:3000/users?name=${encodeURIComponent(name)}`,
     );
     const users = await response.json();
     return users[0]; // Nimmt das erste Element aus dem Array der Benutzer, die zurückgegeben werden
