@@ -20,12 +20,12 @@ const routes: Routes = [
     title: 'xCalendar - Registration',
   },
   {
-    path: 'home/:userMailAddress/:userPassword',
+    path: 'home/:userMailAddress',
     component: LandingPageComponent,
     title: 'xCalendar - Home',
   },
   {
-    path: 'profile/:userMailAddress/:userPassword',
+    path: 'profile/:userMailAddress',
     component: UserProfileComponent,
     title: 'xCalendar - Profile',
   },

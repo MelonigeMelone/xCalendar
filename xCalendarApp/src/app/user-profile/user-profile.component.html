@@ -1,0 +1,32 @@
+<header>
+  <app-header></app-header>
+</header>
+<body>
+  <div class="user-profile-container">
+    <div class="form-backgound-img"></div>
+    <div class="profile-picture">
+      <img src="../../assets/img/profile-pic-modern.png" alt="img" />
+    </div>
+    <div class="username-container">
+      <h2>{{ user.username }}</h2>
+      <p>
+        <img src="../../assets/img/mail-icon.png" alt="img" />{{ user.email }}
+      </p>
+    </div>
+  </div>
+  <div class="profile-form-separator"></div>
+  <div class="user-profile-container">
+    <div class="user-information-container">
+      <p><b>Corresponding password:</b> {{ user.password }}</p>
+      <p><b>Phone:</b> {{ user.phone }}</p>
+      <p><b>Organization:</b> Default Organization</p>
+      <p>...</p>
+    </div>
+    <div class="logout-btn-container" (click)="logout()">
+      <p>Logout</p>
+    </div>
+  </div>
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>

@@ -16,15 +16,12 @@ import { HeaderComponent } from '../header/header.component';
 export class LandingPageComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
 
-  userMailAddress = 'null';
+  protected userMailAddress = '';
 
-  userPassword = 'null';
-
-  date = 'null';
+  protected date = '';
 
   constructor() {
     this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
-    this.userPassword = String(this.route.snapshot.params['userPassword']);
     this.date = new Date().toLocaleDateString();
   }
 }
