@@ -1,0 +1,69 @@
+body {
+  background-color: rgb(52, 61, 63);
+
+  .content-container {
+    height: 92%;
+    padding: 1em 4em;
+    background-image: url("../../assets/img/item-background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    color: whitesmoke;
+
+    h1 {
+      text-align: center;
+      font-size: 3vh;
+    }
+
+    .appointment-info {
+      margin-left: 15vw;
+      margin-bottom: 4vh;
+
+      p {
+        font-size: 2vh;
+      }
+    }
+
+    .infos {
+      display: flex;
+      justify-content: center;
+
+      .chat {
+        background-color: rgb(51, 58, 79);
+        padding: 1vh 1vw;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        width: 30vw;
+        height: 25vh;
+
+        .chat-message {
+          background-color: rgba(255, 255, 255, 0.1);
+          padding: 1vh 1vw;
+          width: 10vw;
+          border-radius: 10px;
+          float: left;
+        }
+        .chat-message-2 {
+          background-color: rgba(255, 255, 255, 0.1);
+          padding: 1vh 1vw;
+          width: 10vw;
+          border-radius: 10px;
+          float: right;
+          margin-top: 6vh;
+        }
+      }
+
+      .weather {
+        margin-left: 2vw;
+        background-color: rgb(51, 58, 79);
+        padding: 1vh 1vw;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        width: 30vw;
+        height: 25vh;
+      }
+    }
+
+  }
+
+}
