@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {FooterComponent} from "../footer/footer.component";
 import {HeaderComponent} from "../header/header.component";
 import {NgForOf} from "@angular/common";
 import moment from 'moment';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-calendar',
@@ -19,10 +20,22 @@ export class CalendarComponent implements OnInit {
   // @ts-ignore
   currentMonth: moment.Moment;
 
-  constructor() { }
+  route: ActivatedRoute = inject(ActivatedRoute);
+  private router: Router = inject(Router);
+  userMailAddress = "null";
+  userPassword = "null";
+
+  constructor() {
+    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
+    this.userPassword = String(this.route.snapshot.params['userPassword']);
+  }
 
   ngOnInit(): void {
     this.currentMonth = moment(); // Initialize with current month
+  }
+
+  navigateToDay(year: number, month: number, day: number): void {
+    this.router.navigate(['calendar-day', this.userMailAddress, this.userPassword, year, month, day])
   }
 
   nextMonth() {
@@ -52,7 +65,6 @@ export class CalendarComponent implements OnInit {
       });
       currentDay.add(1, 'day');
     }
-
     return calendar;
   }
 
