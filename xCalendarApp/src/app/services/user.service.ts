@@ -19,7 +19,7 @@ export class UserService {
     return this.apollo.watchQuery({
       query: GET_USER_DATA,
       variables: {
-        name,
+        name: name,
       },
     }).valueChanges;
   }

@@ -3,20 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
-import { HttpLink, createHttpLink } from '@apollo/client';
-import { InMemoryCache } from '@apollo/client/core';
-import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { GraphQLModule } from './graphql.module';
 import { FlappyBirdComponent } from './minigame-page/minigame-page.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarDayComponent } from './calendar-day/calendar-day.component';
 import { AppointmentInfoComponent } from './appointment-info/appointment-info.component';
+
+import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache, createHttpLink } from '@apollo/client/core';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent],
