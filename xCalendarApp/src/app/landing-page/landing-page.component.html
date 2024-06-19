@@ -1,19 +1,97 @@
-<!-- <header>
+<header>
   <app-header></app-header>
-</header> -->
+</header>
 <body>
-  <div class="content-container">
-    <div class="item" id="item-1">
-      <h3>Calendar - {{ date }}</h3>
+<div class="content-container">
+  <div class="item" id="item-1" (click)="navigateToCalendar()">
+    <h3>Calendar - {{ date }}</h3>
+    <div class="calendar-week-preview">
+      <div class="calendar-week-preview-day" *ngFor="let day of upcomingDays">
+        <p class="date">{{ day.date }}</p>
+        <div class="weekDayContainer">
+          <p class="weekDay">{{day.weekday}}</p>
+        </div>
+      </div>
     </div>
-    <div class="item" id="item-2"><h3>Upcoming Events</h3></div>
-    <div class="item" id="item-3"><h3>Favourite Places</h3></div>
-    <div class="item" id="item-4"><h3>Maps</h3></div>
-    <div class="item" id="item-5"><h3>Weather Forecast</h3></div>
-    <div class="item" id="item-6"><h3>Chats</h3></div>
-    <div class="item" id="item-7"><h3>Minigame</h3></div>
   </div>
+  <div class="item" id="item-2">
+    <h3>Upcoming Events</h3>
+    <table class="events-table">
+      <tr>
+        <th>Date</th>
+        <th>Event</th>
+        <th>Location</th>
+        <th>Participant</th>
+      </tr>
+      <tr>
+        <td>2024-07-01</td>
+        <td>Summer Festival</td>
+        <td>Nürburgring</td>
+        <td>Abteilung IT</td>
+      </tr>
+      <tr>
+        <td>2024-07-15</td>
+        <td>Tech Conference</td>
+        <td>KIT-Karlsruhe</td>
+        <td>Tobi, David B., Paul, David A.</td>
+      </tr>
+      <tr>
+        <td>2024-08-20</td>
+        <td>Music Concert</td>
+        <td>Gotec</td>
+        <td>Paul</td>
+      </tr>
+    </table>
+  </div>
+  <div class="item" id="item-3">
+    <h3>Favorite Places</h3>
+    <table class="events-table">
+      <tr>
+        <th>Location</th>
+        <th>Visited</th>
+      </tr>
+      <tr>
+        <td>Gotec - Karlsruhe</td>
+        <td>459 Times</td>
+      </tr>
+    </table>
+  </div>
+  <div class="item" id="item-4"><h3>Maps</h3></div>
+  <div class="item" id="item-5"><h3>Weather Forecast</h3>
+    <table class="events-table">
+      <tr>
+        <th>Standort</th>
+        <th>Temperatur</th>
+        <th>Gefühlte Temperatur</th>
+        <th>Regen</th>
+        <th>Wetter</th>
+      </tr>
+      <tr>
+        <td>Karlsruhe</td>
+        <td>{{weatherData?.current?.temperature_2m}} °C</td>
+        <td>{{weatherData?.current?.apparent_temperature}} °C</td>
+        <td>{{weatherData?.current?.rain}} mm</td>
+        <td>{{weatherService.getWeatherDescription(weatherData?.current?.weather_code)}}</td>
+      </tr>
+    </table>
+
+  </div>
+  <div class="item" id="item-6">
+    <h3>Chats</h3>
+    <div class="chat-item">
+      <div class="chat-bubble">
+        <p><strong>Paul:</strong> Hey, habt ihr Lust, am 20.08 mit ins Gotec zu gehen?</p>
+      </div>
+      <div class="reply-field">
+        <input type="text" class="reply-input" placeholder="Antworten...">
+        <button class="reply-button">Senden</button>
+      </div>
+    </div>
+  </div>
+  <div class="item" id="item-7" (click)="navigateToMinigame()"><h3>Minigame</h3></div>
+</div>
 </body>
 <footer>
   <app-footer></app-footer>
 </footer>
+
