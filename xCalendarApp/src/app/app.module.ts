@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
-import { HttpLink, createHttpLink, InMemoryCache } from '@apollo/client';
+import { HttpLink, createHttpLink } from '@apollo/client';
+import { InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
