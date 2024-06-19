@@ -9,7 +9,7 @@ exec("json-server --watch data.json --port 3000", (err, stdout, stderr) => {
   console.error(`JSON Server stderr: ${stderr}`);
 });
 
-console.log("JSON Server is running on http://localhost:3000...");
+console.log("🚀 JSON Server is running on http://localhost:3000...");
 
 exec("nodemon index.js", (err, stdout, stderr) => {
   if (err) {
@@ -20,6 +20,4 @@ exec("nodemon index.js", (err, stdout, stderr) => {
   console.error(`GraphQL Server stderr: ${stderr}`);
 });
 
-console.log(
-  "Express GraphQL Server is running on http://localhost:4000/graphql...",
-);
+console.log("🚀 Server ready at http://localhost:4000/graphql");
