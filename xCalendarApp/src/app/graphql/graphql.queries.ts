@@ -1,4 +1,4 @@
-import { gql } from "apollo-angular";
+import { gql } from 'apollo-angular';
 
 const GET_USER_DATA = gql`
   query getUserByName($name: String!) {
@@ -7,20 +7,18 @@ const GET_USER_DATA = gql`
       email
       name
       password
-      phoneNumber
     }
   }
 `;
 
 const ADD_USER_DATA = gql`
-mutation createUser($id: String!, $email: String!, $name: String!, $password: String!, $phoneNumber:Number!){
-    createUser(id: $id, email: $email, name: $name, password: $password, phoneNumber:$phoneNumber)
+  mutation createUser($id: String!, $email: String!, $name: String!, $password: String!) {
+    createUser(id: $id, email: $email, name: $name, password: $password)
     id
     email
     name
     password
-    phoneNumber
-}
+  }
 `;
 
-export { GET_USER_DATA,ADD_USER_DATA };
+export { GET_USER_DATA, ADD_USER_DATA };

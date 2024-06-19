@@ -1,37 +1,41 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ActivatedRoute, Router} from '@angular/router';
-import {HeaderComponent} from '../header/header.component';
-import {FooterComponent} from '../footer/footer.component';
-import {WeatherResponse, WeatherService} from "../weather-service/weather.service";
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { WeatherResponse, WeatherService } from '../weather-service/weather.service';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule,HeaderComponent, FooterComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent implements OnInit{
+export class LandingPageComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
+
   private router: Router = inject(Router);
-  userMailAddress = "null";
-  userPassword = "null";
-  date = "null";
+
+  userMailAddress = 'null';
+
+  date = 'null';
+
   weatherData: WeatherResponse | undefined;
-  upcomingDays: { date: number, weekday: string }[] = [];
+
+  upcomingDays: { date: number; weekday: string }[] = [];
 
   constructor(protected weatherService: WeatherService) {
-    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
-    this.userPassword = String(this.route.snapshot.params['userPassword']);
+    this.userMailAddress = String(this.route.snapshot.params['userName']);
     this.date = new Date().toLocaleDateString();
   }
-  navigateToMinigame() {
-      this.router.navigate(['flappy-bird', this.userMailAddress, this.userPassword])
-  }
-  navigateToCalendar() {
-      this.router.navigate(['calendar', this.userMailAddress, this.userPassword])
 
+  navigateToMinigame() {
+    this.router.navigate(['flappy-bird', this.userMailAddress]);
+  }
+
+  navigateToCalendar() {
+    this.router.navigate(['calendar', this.userMailAddress]);
   }
 
   ngOnInit(): void {

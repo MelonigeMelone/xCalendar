@@ -16,8 +16,6 @@
     "prettier-eslint": "^16.1.2"
   },
   "dependencies": {
-    "@apollo/server": "^4.10.4",
-    "apollo-server-express": "^3.13.0",
     "axios": "^1.7.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",

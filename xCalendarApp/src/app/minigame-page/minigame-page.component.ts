@@ -1,25 +1,39 @@
 import { Component, OnInit, HostListener, inject } from '@angular/core';
-import {HeaderComponent} from '../header/header.component';
-import {FooterComponent} from '../footer/footer.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-flappy-bird',
   imports: [HeaderComponent, FooterComponent],
   standalone: true,
   templateUrl: './minigame-page.html',
-  styleUrls: ['./minigame-page.component.scss']
+  styleUrls: ['./minigame-page.component.scss'],
 })
-export class FlappyBirdComponent{
+export class FlappyBirdComponent {
+  route: ActivatedRoute = inject(ActivatedRoute);
 
   private canvas: HTMLCanvasElement | undefined;
+
   private context: CanvasRenderingContext2D | undefined;
+
   private router: Router = inject(Router);
+
+  userName = 'null';
+
   private bird = { x: 50, y: 150, width: 20, height: 20, gravity: 0.6, lift: -7.5, velocity: 0 };
+
   private pipes: { x: number; y: number; width: number; height: number }[] = [];
+
   private frame = 0;
+
   public score = 0;
+
   private gameOver = false;
+
+  constructor() {
+    this.userName = String(this.route.snapshot.params['userName']);
+  }
 
   ngOnInit() {
     this.canvas = <HTMLCanvasElement>document.getElementById('gameCanvas');
@@ -36,6 +50,7 @@ export class FlappyBirdComponent{
       this.bird.velocity = this.bird.lift;
     }
   }
+
   @HostListener('window:mousedown')
   handleMouseDown() {
     this.bird.velocity = this.bird.lift;
@@ -52,10 +67,10 @@ export class FlappyBirdComponent{
 
   updateGame() {
     if (this.gameOver) {
-      this.context!.fillStyle = "white";
-      this.context!.font = "20px Arial";
-      this.context!.fillText("Game Over", 100, 240);
-      this.context!.fillText("Score: " + this.score, 100, 270);
+      this.context!.fillStyle = 'white';
+      this.context!.font = '20px Arial';
+      this.context!.fillText('Game Over', 100, 240);
+      this.context!.fillText(`Score: ${this.score}`, 100, 270);
       return;
     }
 
@@ -70,7 +85,7 @@ export class FlappyBirdComponent{
   }
 
   drawBird() {
-    this.context!.fillStyle = "yellow";
+    this.context!.fillStyle = 'yellow';
     this.context!.fillRect(this.bird.x, this.bird.y, this.bird.width, this.bird.height);
   }
 
@@ -89,16 +104,21 @@ export class FlappyBirdComponent{
 
   handlePipes() {
     if (this.frame % 90 === 0) {
-      let pipeHeight = Math.floor(Math.random() * 200) + 50;
+      const pipeHeight = Math.floor(Math.random() * 200) + 50;
       this.pipes.push({ x: this.canvas!.width, y: 0, width: 20, height: pipeHeight });
-      this.pipes.push({ x: this.canvas!.width, y: pipeHeight + 100, width: 20, height: this.canvas!.height - pipeHeight - 100 });
+      this.pipes.push({
+        x: this.canvas!.width,
+        y: pipeHeight + 100,
+        width: 20,
+        height: this.canvas!.height - pipeHeight - 100,
+      });
     }
 
     this.pipes = this.pipes.filter(pipe => pipe.x + pipe.width > 0);
 
     this.pipes.forEach(pipe => {
       pipe.x -= 2;
-      this.context!.fillStyle = "green";
+      this.context!.fillStyle = 'green';
       this.context!.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
     });
 
@@ -119,11 +139,13 @@ export class FlappyBirdComponent{
       }
     });
   }
-  refreshGame(){
+
+  refreshGame() {
     this.resetGame();
     window.location.reload();
   }
-  navigateHome(){
-    this.router.navigate(['home/:userMailAddress/:userPassword']);
+
+  navigateHome() {
+    this.router.navigate(['home/', this.userName]);
   }
 }

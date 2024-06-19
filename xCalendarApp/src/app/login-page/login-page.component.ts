@@ -9,11 +9,11 @@ import { UserService } from '../services/user.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf, RouterModule]
+  imports: [FormsModule, ReactiveFormsModule, NgIf, RouterModule],
 })
 export class LoginPageComponent {
   protected errorMsg: string;
-  protected userData!: any[];
+  protected userData!: any;
 
   // eslint-disable-next-line no-useless-constructor, no-empty-function
   constructor(
@@ -29,8 +29,8 @@ export class LoginPageComponent {
 
       if (this.userData.length < 1) {
         this.errorMsg = 'The entered user does not exist';
-      } else if (this.userData[0].password === password) {
-        this.router.navigate(['/home', username, password]);
+      } else if (this.userData.password === password) {
+        this.router.navigate(['/home', username]);
       } else {
         this.errorMsg = 'The entered credentials are invalid';
       }
