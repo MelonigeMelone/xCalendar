@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent, title: 'xCalendar - Login' },
   { path: 'registration', component: RegisterPageComponent, title: 'xCalendar - Registration' },
   { path: 'home/:userName', component: LandingPageComponent, title: 'xCalendar - Home' },
-  { path: 'profile/:userMailAddress', component: UserProfileComponent, title: 'xCalendar - Profile' },
+  { path: 'profile/:userName', component: UserProfileComponent, title: 'xCalendar - Profile' },
   {
     path: 'flappy-bird/:userName',
     component: FlappyBirdComponent,
@@ -26,12 +26,7 @@ const routes: Routes = [
   { path: 'calendar-day/:userName/:year/:month/:day', component: CalendarDayComponent, title: 'xCalendar - Kalendar' },
   { path: 'appointment-info/:userName', component: AppointmentInfoComponent, title: 'xCalendar - Kalendar' },
   {
-    path: 'home/:userMailAddress',
-    component: LandingPageComponent,
-    title: 'xCalendar - Home',
-  },
-  {
-    path: 'profile/:userMailAddress',
+    path: 'profile/:userName',
     component: UserProfileComponent,
     title: 'xCalendar - Profile',
   },
