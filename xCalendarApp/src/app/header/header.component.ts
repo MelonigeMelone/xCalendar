@@ -1,13 +1,11 @@
  import {Component, inject} from '@angular/core';
  import {CommonModule} from '@angular/common';
  import {ActivatedRoute, Router, RouterModule} from '@angular/router';
- import {MatToolbarModule} from '@angular/material/toolbar';
- import {MatIconModule} from '@angular/material/icon';
 
  @Component({
    selector: 'app-header',
    standalone: true,
-   imports: [CommonModule, MatToolbarModule, MatIconModule, RouterModule],
+   imports: [CommonModule, RouterModule],
    templateUrl: './header.component.html',
    styleUrls: ['./header.component.scss']
  })
