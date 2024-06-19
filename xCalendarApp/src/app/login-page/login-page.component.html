@@ -1,1 +1,44 @@
-<p>works</p>
+<div class="background">
+  <div class="login-form">
+    <div class="xcal-logo-container">
+      <img src="assets/img/xcalendar-logo.png" alt="xcal-logo" />
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="login-headline">
+      <h2>Login</h2>
+    </div>
+    <div class="user-input-container">
+      <label for="username-input">Username</label>
+      <input
+        #username
+        type="text"
+        id="username-input"
+        (click)="hideErrorMsg()"
+      />
+      <label for="password-input">Password</label>
+      <input
+        #password
+        type="password"
+        id="password-input"
+        (click)="hideErrorMsg()"
+      />
+    </div>
+    <div class="error-message-container">
+      <p class="error-message">{{ errorMsg }}</p>
+    </div>
+    <div class="submit-login-button-container">
+      <button
+        class="submit-login"
+        (click)="onFormSubmit(username.value, password.value)"
+      >
+        Login
+      </button>
+    </div>
+    <div class="register-container">
+      <p>
+        Do not have an xCalendar account?
+        <a routerLink="/registration">Create account</a>
+      </p>
+    </div>
+  </div>
+</div>
