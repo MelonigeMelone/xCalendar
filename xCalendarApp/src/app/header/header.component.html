@@ -1,18 +1,14 @@
 <div class="header-background">
   <div class="header">
     <div class="logo-container" (click)="onClickHome()">
-      <img
-        class="xcal-logo"
-        src="assets/img/xcalendar-logo-accent.png"
-        alt="xcal-logo"
-      />
+      <img class="xcal-logo" src="assets/img/xcalendar-logo-accent.png" alt="xcal-logo" />
     </div>
     <div class="user-profile-contaier" (click)="onClickProfile()">
       <div class="profile-picture-container">
         <img src="assets/img/profile-pic.png" alt="profilepic" />
       </div>
       <div class="username-container">
-        <h3>{{ userMailAddress }}</h3>
+        <h3>{{ userName }}</h3>
       </div>
     </div>
   </div>

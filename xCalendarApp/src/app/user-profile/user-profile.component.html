@@ -8,17 +8,15 @@
       <img src="../../assets/img/profile-pic-modern.png" alt="img" />
     </div>
     <div class="username-container">
-      <h2>{{ user?.username }}</h2>
-      <p>
-        <img src="../../assets/img/mail-icon.png" alt="img" />{{ user?.email }}
-      </p>
+      <h2>{{ userData?.username }}</h2>
+      <p><img src="../../assets/img/mail-icon.png" alt="img" />{{ userData?.email }}</p>
     </div>
   </div>
   <div class="profile-form-separator"></div>
   <div class="user-profile-container">
     <div class="user-information-container">
-      <p><b>Corresponding password:</b> {{ user?.password }}</p>
-      <p><b>Phone:</b> {{ user?.phone }}</p>
+      <p><b>Corresponding password:</b> {{ userData?.password }}</p>
+      <p><b>Phone:</b> {{ userData?.phone }}</p>
       <p><b>Organization:</b> Default Organization</p>
       <p>...</p>
     </div>

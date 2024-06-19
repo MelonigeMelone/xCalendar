@@ -20,20 +20,21 @@ export class UserProfileComponent {
 
   protected username: string = '';
 
-  protected user: User |undefined;
+  protected userData: User | undefined;
 
-  constructor(private userService: UserService, private router: Router) {
-    this.username = String(this.route.snapshot.params['userMailAddress']);
-    //this.user = this.getUserInformation();
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {
+    this.username = String(this.route.snapshot.params['userName']);
+    this.getUserInformation();
   }
 
-  private getUserInformation(): User {
-    for (const user of this.userService.users) {
-      if (this.username === user.username) {
-        return user;
-      }
-    }
-    throw new Error;
+  private getUserInformation() {
+    this.userService.getUserByName(this.username).subscribe(({ data }: any) => {
+      this.userData = data.user;
+    });
+    // throw new Error();
   }
 
   protected logout(): void {

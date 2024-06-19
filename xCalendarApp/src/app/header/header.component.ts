@@ -14,17 +14,17 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 export class HeaderComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
 
-  protected userMailAddress: string = '';
+  protected userName: string = '';
 
   constructor(private router: Router) {
-    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
+    this.userName = String(this.route.snapshot.params['userName']);
   }
 
   onClickHome() {
-    this.router.navigate(['/home', this.userMailAddress]);
+    this.router.navigate(['/home', this.userName]);
   }
 
   onClickProfile() {
-    this.router.navigate(['profile', this.userMailAddress]);
+    this.router.navigate(['profile', this.userName]);
   }
 }
