@@ -1,14 +1,17 @@
-import { Component, inject, OnInit } from '@angular/core';
+
+/* eslint-disable prettier/prettier */
+/* eslint-disable dot-notation */
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
-import { WeatherResponse, WeatherService } from '../weather-service/weather.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, FooterComponent, HeaderComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
@@ -21,12 +24,9 @@ export class LandingPageComponent implements OnInit {
 
   date = 'null';
 
-  weatherData: WeatherResponse | undefined;
-
-  upcomingDays: { date: number; weekday: string }[] = [];
-
-  constructor(protected weatherService: WeatherService) {
-    this.userMailAddress = String(this.route.snapshot.params['userName']);
+  constructor() {
+    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
+    this.userPassword = String(this.route.snapshot.params['userPassword']);
     this.date = new Date().toLocaleDateString();
   }
 

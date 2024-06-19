@@ -24,15 +24,18 @@ export class LoginPageComponent {
   }
 
   protected onFormSubmit(username: string, password: string): void {
-    this.userService.getUserByName(username).subscribe(({ data }: any) => {
-      this.userData = data.user;
-
-      if (this.userData.length < 1) {
-        this.errorMsg = 'The entered user does not exist';
-      } else if (this.userData.password === password) {
-        this.router.navigate(['/home', username]);
-      } else {
-        this.errorMsg = 'The entered credentials are invalid';
+    if (this.userService.users.length < 1) {
+      this.errorMsg = 'The entered user does not exist';
+    } else {
+      for (const registeredUser of this.userService.users) {
+        if (
+          registeredUser.username === username &&
+          registeredUser.password === password
+        ) {
+          this.router.navigate(['/home', username, password]);
+        } else {
+          this.errorMsg = 'The entered credentials are invalid';
+        }
       }
     });
   }
