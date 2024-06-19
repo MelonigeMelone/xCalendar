@@ -1,0 +1,36 @@
+<header>
+  <app-header></app-header>
+</header>
+<body>
+<div class="content-container">
+  <h2>{{day}}.{{month}} {{year}}</h2>
+  <div class="calendar-day">
+    <h3>Appointments today</h3>
+    <table class="events-table">
+      <tr>
+        <th>Time</th>
+        <th>Event</th>
+        <th>Location</th>
+        <th>Participant</th>
+      </tr>
+      <tr (click)="navigateToAppointmentInfo()">
+        <td>14-16Uhr</td>
+        <td>Zahnarzt</td>
+        <td>Karlsruhe</td>
+        <td>Tobi</td>
+      </tr>
+      <tr (click)="navigateToAppointmentInfo()">
+        <td>18-21Uhr</td>
+        <td>EM schauen</td>
+        <td>Mauritius</td>
+        <td>Tobi,David B. Paul, David A.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+
