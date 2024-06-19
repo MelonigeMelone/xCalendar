@@ -31,7 +31,7 @@ export class LoginPageComponent {
           registeredUser.username === username &&
           registeredUser.password === password
         ) {
-          this.router.navigate(['home/:username/:password']);
+          this.router.navigate(['/home', username, password]);
         } else {
           this.errorMsg = 'The entered credentials are invalid';
         }
