@@ -2,7 +2,7 @@ const { buildSchema } = require("graphql");
 
 const schema = buildSchema(`
   type Query {
-    user(email: String!): xCalendarUser
+    user(name: String!): xCalendarUser
   }
 
   type Mutation {

@@ -4,47 +4,37 @@ import { NgIf } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../services/user.service';
 
-import { HttpLink, InMemoryCache, createHttpLink } from '@apollo/client/core';
-import { APOLLO_OPTIONS, Apollo, ApolloModule } from 'apollo-angular';
-import { GET_USER_DATA } from '../graphql/graphql.queries';
-
 @Component({
-  selector: "app-login-page",
-  templateUrl: "./login-page.component.html",
-  styleUrls: ["./login-page.component.scss"],
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss'],
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf, RouterModule],
+  imports: [FormsModule, ReactiveFormsModule, NgIf, RouterModule]
 })
 export class LoginPageComponent {
   protected errorMsg: string;
+  protected userData!: any[];
 
   // eslint-disable-next-line no-useless-constructor, no-empty-function
   constructor(
     private router: Router,
-    private userService: UserService,
+    private userService: UserService
   ) {
     this.errorMsg = '';
   }
 
   protected onFormSubmit(username: string, password: string): void {
-    if (this.userService.users.length < 1) {
-      this.errorMsg = 'The entered user does not exist';
-    } else {
-      for (const registeredUser of this.userService.users) {
-        if (
-          registeredUser.username === username &&
-          registeredUser.password === password
-        ) {
-          this.router.navigate(['home/:username/:password']);
-        } else {
-          this.errorMsg = 'The entered credentials are invalid';
-        }
+    this.userService.getUserByName(username).subscribe(({ data }: any) => {
+      this.userData = data.user;
+
+      if (this.userData.length < 1) {
+        this.errorMsg = 'The entered user does not exist';
+      } else if (this.userData[0].password === password) {
+        this.router.navigate(['/home', username, password]);
+      } else {
+        this.errorMsg = 'The entered credentials are invalid';
       }
-    }
-this.userService.getUserByEmail(userMailAddress).subscribe(({data}:any)=>{
-      this.userData=data.user;
-      if (this.userData.password == userPassword) {
-      this.router.navigate(["/home", userMailAddress, userPassword]);
+    });
   }
 
   protected hideErrorMsg(): void {

@@ -42,9 +42,9 @@
 const fetch = require("node-fetch");
 
 const root = {
-  user: async ({ email }) => {
+  user: async ({ name }) => {
     const response = await fetch(
-      `http://localhost:3000/users?email=${encodeURIComponent(email)}`,
+      `http://localhost:3000/users?email=${encodeURIComponent(name)}`,
     );
     const users = await response.json();
     return users[0]; // Nimmt das erste Element aus dem Array der Benutzer, die zurückgegeben werden
@@ -62,7 +62,7 @@ const root = {
       body: JSON.stringify({ id, email, name, password }),
     });
     return response.json();
-    // Hier würden Sie die Logik implementieren, um einen neuen Benutzer zu erstellen.
+    // Logik implementieren, um einen neuen Benutzer zu erstellen.
   },
 };
 

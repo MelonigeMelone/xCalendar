@@ -1,8 +1,8 @@
 import { gql } from "apollo-angular";
 
 const GET_USER_DATA = gql`
-  query getUserByEmail($email: String!) {
-    user(email: $email) {
+  query getUserByName($name: String!) {
+    user(name: $name) {
       id
       email
       name
