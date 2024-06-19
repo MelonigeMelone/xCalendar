@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgIf, NgClass } from '@angular/common';
 
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 
@@ -30,7 +30,10 @@ export class RegisterPageComponent {
 
   private numberPattern: RegExp = /^\d+$/;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ) {
     this.usernameHasError = false;
     this.passwordHasError = false;
     this.emailHasError = false;
@@ -54,6 +57,7 @@ export class RegisterPageComponent {
     ) {
       this.errorMsg = '';
       this.userService.addUser(new User(username, email, phone, password));
+      this.router.navigate(['home/:username/:password']);
     }
   }
 
