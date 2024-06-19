@@ -1,115 +1,215 @@
-body
-{
-    background-color: rgb(52, 61, 63); 
+body {
+  background-color: rgb(52, 61, 63);
 
-    .content-container
-    {
-        height: 92%;
-        padding: 1em 4em;
-        display: grid; 
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 0.5fr 0.75fr;
-        background-image: url("../../assets/img/item-background.png");
-        background-size: contain; 
-        background-repeat: no-repeat;
-        background-position: left;
-        row-gap: 1%;
-        column-gap: 1%;
-        grid-template-areas: 
+  .content-container {
+    height: 92%;
+    padding: 1em 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.75fr;
+    background-image: url("../../assets/img/item-background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    row-gap: 1%;
+    column-gap: 1%;
+    grid-template-areas:
         "eins eins zwei"
         "drei vier fünf"
-        "sechs sieben sieben";     
+        "sechs sieben sieben";
+  }
+
+  .item {
+    border-radius: 8px;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(255, 255, 255, 0.1);
+
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 1em 1em;
+
+      h3 {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+
+  #item-1 {
+    margin: 3em 1em 1em 3em;
+    grid-area: eins;
+
+    &:hover {
+      margin: 2em 0 0 2em;
+    }
+  }
+
+  #item-2 {
+    margin: 3em 3em 1em 0;
+    grid-area: zwei;
+
+    &:hover {
+      margin: 2em 2em 0em -1em;
+    }
+  }
+
+  #item-3 {
+    margin: 1em 1em 0 3em;
+    grid-area: drei;
+
+    &:hover {
+      margin: 0 0em -1em 2em;
+    }
+  }
+
+  #item-4 {
+    margin: 1em 0 0 0;
+    grid-area: vier;
+
+    &:hover {
+      margin: 0em -1em -1em -1em;
+    }
+  }
+
+  #item-5 {
+    margin: 1em 3em 0 1.5em;
+    grid-area: fünf;
+
+    &:hover {
+      margin: 0 2em -1em 0.5em;
+    }
+  }
+
+  #item-6 {
+    margin: 2em 0 2em 3em;
+    grid-area: sechs;
+
+    &:hover {
+      margin: 1em -1em 1em 2em;
+    }
+  }
+
+  #item-7 {
+    margin: 2em 3em 2em 3em;
+    grid-area: sieben;
+    background-image: url('../../assets/img/flappy_bird_banner_by_storesnurr_d7e1j2g-fullview.jpg');
+
+    &:hover {
+      margin: 1em 2em 1em 2em;
+    }
+  }
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    color: whitesmoke;
+    background-color: rgb(51, 58, 79);
+  }
+
+  .events-table th, .events-table td {
+    border: 1px solid whitesmoke;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .events-table th {
+    background-color: rgb(44, 48, 59);
+  }
+
+  .events-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .calendar-week-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .calendar-week-preview-day {
+    display: block;
+    width: 10vw;
+    height: 10vh;
+    margin-left: 1vw;
+    background-color: rgb(44, 48, 59);
+
+    .weekDayContainer {
+      background-color: rgb(51, 58, 79);
+      border-top-color: rgb(255, 64, 129);
+      border-top-style: solid;
+      border-top-width: 1px;
+      margin-bottom: 0;
     }
 
-    .item
-    {
-        border-radius: 8px;
-        text-align: center;
-        color: whitesmoke;
-        background-color: rgba(255, 255, 255, 0.1);
-
-
-        &:hover
-        {
-            background-color: rgba(255, 255, 255, 0.5);
-            padding: 1em 1em;
-            
-            h3 
-            {
-                font-weight: bold; 
-                color: black;
-            }
-        }
+    .weekDay {
+      text-align: center;
+      margin-bottom: 0;
+      padding-bottom: 1vh;
+      padding-top: 1vh;
+      font-size: 2vh;
     }
 
-     #item-1
-    {
-        margin: 3em 1em 1em 3em;
-        grid-area: eins;
-
-        &:hover
-        {
-            margin: 2em 0em 0em 2em;        
-        }
+    .date {
+      text-align: left;
+      margin-top: 1vh;
+      font-size: 3vh;
+      font-weight: bold;
+      margin-left: 1vw;
     }
-    #item-2
-    {
-        margin: 3em 3em 1em 0em;
-        grid-area: zwei;
+  }
+  .chat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-        &:hover
-        {
-            margin: 2em 2em 0em -1em;        
-        }
-    }
-    #item-3
-    {
-        margin: 1em 1em 0em 3em;
-        grid-area: drei;
+  .chat-bubble {
+    position: relative;
+    max-width: 60%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    background-color: #e1ffc7;
+    color: #000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
 
-        &:hover
-        {
-            margin: 0em 0em -1em 2em;        
-        }
-    }
-    #item-4
-    {
-        margin: 1em 0em 0em 0em;
-        grid-area: vier;
+  .chat-bubble:hover {
+    background-color: #d1ffb7;
+  }
 
-        &:hover
-        {
-            margin: 0em -1em -1em -1em;        
-        }
-    }
-    #item-5
-    {
-        margin: 1em 3em 0em 1.5em;
-        grid-area: fünf;
+  .reply-field {
+    display: none;
+    margin-top: 10px;
+  }
 
-        &:hover
-        {
-            margin: 0em 2em -1em 0.5em;        
-        }
-    }
-    #item-6
-    {
-        margin: 2em 0em 2em 3em;
-        grid-area: sechs;
+  .chat-bubble:hover + .reply-field {
+    display: block;
+  }
 
-        &:hover
-        {
-            margin: 1em -1em 1em 2em;        
-        }
-    }
-    #item-7
-    {
-        margin: 2em 3em 2em 3em;
-        grid-area: sieben;
+  .reply-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
-        &:hover
-        {
-            margin: 1em 2em 1em 2em;        
-        }
-    }
+  .reply-button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .reply-button:hover {
+    background-color: #45a049;
+  }
 }

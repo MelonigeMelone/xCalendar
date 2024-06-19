@@ -1,35 +1,44 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from "@angular/common/http";
-import { APOLLO_OPTIONS, ApolloModule } from "apollo-angular";
-import { HttpLink, InMemoryCache } from "@apollo/client/core";
-import { LoginPageComponent } from "./login-page/login-page.component";
-import { RegisterPageComponent } from "./register-page/register-page.component";
-import { LandingPageComponent } from "./landing-page/landing-page.component";
-import { FooterComponent } from "./footer/footer.component";
-import { AppComponent } from "./app.component";
-import { AppRoutingModule } from "./app-routing.module";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
 
-@NgModule({
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    LoginPageComponent,
-    RegisterPageComponent,
-    LandingPageComponent,
-    ApolloModule,
-  ],
-  providers: [
-    {
+import {LoginPageComponent} from './login-page/login-page.component';
+import {RegisterPageComponent} from './register-page/register-page.component';
+import {LandingPageComponent} from './landing-page/landing-page.component';
+import {GraphQLModule} from './graphql.module';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {CountriesComponent} from './countries/countries.component';
+import {FlappyBirdComponent} from './minigame-page/minigame-page.component'
+import {CalendarComponent } from './calendar/calendar.component';
+
+
+@NgModule({ declarations: [
+        AppComponent,
+        CountriesComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CalendarComponent,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        LoginPageComponent,
+        RegisterPageComponent,
+        LandingPageComponent,
+        FlappyBirdComponent,
+        GraphQLModule], providers: [{
       provide: APOLLO_OPTIONS,
       useFactory: (httpLink: HttpLink) => ({
         cache: new InMemoryCache(),
@@ -37,7 +46,6 @@ import { AppRoutingModule } from "./app-routing.module";
       }),
       deps: [HttpLink],
     },
-    provideHttpClient(withInterceptorsFromDi()),
-  ],
-})
-export class AppModule {}
+    provideHttpClient(withInterceptorsFromDi()),] })
+export class AppModule {
+}

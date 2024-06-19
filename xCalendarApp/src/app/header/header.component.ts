@@ -1,41 +1,32 @@
-import { Component, OnInit, inject } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { ActivatedRoute, RouterModule, Router } from "@angular/router";
-
-import { Apollo } from "apollo-angular";
-import { map, Observable } from "rxjs";
-import gql from "graphql-tag";
+import {Component, inject} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ActivatedRoute, Router, RouterModule} from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-  selector: "app-header",
+  selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, RouterModule],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-
-  // @ts-ignore
-  user$: Observable<User>;
-
   userMailAddress = "null";
-
   userPassword = "null";
 
-  userData: any[] = [];
-
-  loading = true;
-
-  error: any;
-
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.userMailAddress = String(this.route.snapshot.params['userMailAddress']);
+    this.userPassword = String(this.route.snapshot.params['userPassword']);
+  }
 
   onClickHome() {
-    this.router.navigate(["/home", this.userMailAddress, this.userPassword]);
+    this.router.navigate(['/home', this.userMailAddress, this.userPassword]);
   }
 
   onClickProfile() {
-    this.router.navigate(["/profile", this.userMailAddress, this.userPassword]);
+    this.router.navigate(['/profile', this.userMailAddress, this.userPassword]);
   }
+
 }

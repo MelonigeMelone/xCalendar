@@ -1,120 +1,101 @@
-body
-{
-    background-image: url("../../assets/img/color-fade-bg.png");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+body {
+  background-image: url("../../assets/img/color-fade-bg.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
-.login-form
-{
-    margin: auto;
-    width: 50%;
-    margin-top: 16vh; 
-    padding-left: 2vw;
-    padding-top: 4vh;
-    padding-bottom: 1vh; 
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: grid;
-    width:fit-content;
+.login-form {
+  width: fit-content;
+  margin: 16vh auto auto;
+  padding-left: 2vw;
+  padding-top: 4vh;
+  padding-bottom: 1vh;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: grid;
 }
 
-.login-headline-image-container
-{
-    display: flex;
-    width: fit-content;
+.login-headline-image-container {
+  display: flex;
+  width: fit-content;
 
-    img
-    {
-        height: 5.5vh;
-        margin-left: 2vw;
-    } 
+  img {
+    height: 5.5vh;
+    margin-left: 2vw;
+  }
 }
 
-.login-form-separator
-{
-    margin-left: 0;
+.login-form-separator {
+  margin-left: 0;
+  margin-right: 2vw;
+  margin-bottom: 4vh;
+
+  hr {
+    margin-left: 0px;
+    width: 100%;
+    color: black;
+    background-color: black;
+  }
+}
+
+h2 {
+  margin-left: 8vw;
+  margin-bottom: 4vh;
+  color: rgb(63, 81, 181);
+  cursor: default;
+}
+
+.login-form-user-input-textfield-container {
+  display: grid;
+  width: fit-content;
+
+  .login-form-user-field {
+    width: 21vw;
+  }
+
+  .login-form-forgot-password-link {
+    margin-left: 15.5vw;
+  }
+}
+
+.login-form-login-button-container {
+  display: flex;
+  margin-top: 6vh;
+  width: fit-content;
+
+  button {
+    width: 21vw;
     margin-right: 2vw;
-    margin-bottom: 4vh;
+    background-image: linear-gradient(to right, rgba(169, 33, 98, 1), rgba(0, 144, 162, 1));
 
-    hr 
-    {
-        margin-left: 0px;
-        width: 100%; 
-        color: black;
-        background-color: black;
+    &:hover {
+      text-decoration: underline;
     }
-}
- 
-h2
-{
-    margin-left: 8vw;
-    margin-bottom: 4vh;         
-    color: rgb(63, 81, 181); 
-    cursor: default;
+  }
 }
 
-.login-form-user-input-textfield-container
-{
-    display: grid;
-    width:fit-content;
+.login-form-register-hint-container {
+  width: fit-content;
+  margin-top: 2.5vh;
+  margin-left: 3.25vw;
 
-    .login-form-user-field
-    {
-        width: 21vw;
-    } 
-
-    .login-form-forgot-password-link
-    {
-        margin-left: 15.5vw;
-    }
-}
-
-.login-form-login-button-container
-{
-    display: flex;
-    margin-top: 6vh;
-    width: fit-content;
-
-    button
-    {
-        width: 21vw;
-        margin-right: 2vw;
-        background-image: linear-gradient(to right, rgba(169, 33, 98, 1), rgba(0, 144, 162, 1)); 
-
-        &:hover
-        {
-            text-decoration: underline;
-        }
-    }
-}
-
-.login-form-register-hint-container
-{
-    width: fit-content;
-    margin-top: 2.5vh;
-    margin-left: 3.25vw;
-
-    p
-    {
-        font-size: small;
-        color: rgba(0, 0, 0, 0.75);
-        cursor: default;
-    }
-}
-
-a 
-{
+  p {
     font-size: small;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgb(63, 81, 181);
-            
-    &:hover
-    {
-        text-decoration: underline;
-    }
-} 
+    color: rgba(0, 0, 0, 0.75);
+    cursor: default;
+  }
+}
+
+a {
+  font-size: small;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(63, 81, 181);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
